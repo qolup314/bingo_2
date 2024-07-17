@@ -1,0 +1,495 @@
+body {
+  padding: 10px 40px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color:#d4dcda;
+}
+
+a {
+  color: rgb(40, 40, 182);
+}
+
+.main_1{
+  background-image:url(/images/024fj21329_TP_V.jpg); 
+  background-size: cover;/*縦横比率保ったまま画面いっぱいに広げる*/
+  background-attachment: fixed;/*背景を固定*/
+  padding:0px;
+  background-color:rgb(70, 70, 70);
+}
+
+.main_1 h1 {
+  margin-top:10%;
+  color:whitesmoke;
+  font-size: 6vmax;
+  text-align:center;
+  text-shadow: 4px 4px 4px rgb(58,29,2);
+}
+
+.main_2{
+  margin-top:6%;
+  color:rgb(180, 187, 76);
+  font-size: 1.5vmax;
+  text-align:center;
+  text-shadow: 1px 1px 1px rgb(29, 29, 28);
+}
+.start_00 {
+  position:relative;
+  font-size:5vh;
+  font-weight: bold;
+  background-color:rgb(71, 48, 26);
+  color:rgb(235, 226, 217);
+  border-radius:10px;
+  padding:20px 60px;
+  text-decoration: none;
+  border: 2px solid rgb(185, 172, 154);
+ }
+
+.start_00:hover{
+  color:rgb(243, 243, 243);
+  padding:24px 64px;
+}
+
+#start_00_button{
+  text-align: center;
+  margin-top:7%;
+  margin-bottom: 3%;
+  
+}
+
+.start {
+  position:relative;
+  font-size:34px;
+  font-weight: bold;
+  background-color:rgb(71, 48, 26);
+  color:rgb(235, 226, 217);
+  border-radius:10px;
+  padding:20px 60px;
+  text-decoration: none;
+ }
+
+.start:hover{
+  color:rgb(243, 243, 243);
+  padding:24px 64px;
+}
+
+#start_button{
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 60px;
+}
+
+.main_title{
+  font-size:48px;
+}
+.push{
+  text-align: center;
+  font-size:30px;
+  margin-top:7%;
+}
+
+.final {
+  text-align: center;
+}
+
+.arrow {
+  position: relative;
+  width: 100px;
+  margin: 0 auto;
+}
+.arrow::before {
+  animation: arrow 2.5s infinite;
+  border: solid #FF0000;
+  border-width: 0 0 7px 7px;
+  content: "";
+  margin: auto;
+  position: absolute;
+  top: -64px;
+  left: 25px;
+  transform: rotate(-45deg);
+  width: 30px;
+  height: 30px;
+}
+
+@keyframes arrow {
+  0% {
+    transform: rotate(-45deg) translate(0, 0);
+  }
+  60% {
+    transform: rotate(-45deg) translate(-30px, 30px);
+  }
+  0%, 60%, 100% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+}
+
+input[type="file"]{
+  font-size:25px; 
+  margin-left: 8%;
+  margin-top: 5%;
+  margin-bottom: 8%;
+}
+
+.data button{
+  width:400px;
+  padding:2px;
+  font-size:26px;
+  background-color: rgb(230, 243, 114); 
+  height:80px;
+}
+
+.page_header_1{
+  position: relative;
+  overflow: hidden;
+  padding: 1.5rem 2rem 1.5rem 130px;
+  word-break: break-all;
+  border-top: 3px solid black;
+  border-radius: 12px 0 0 0;
+  font-size:40px;
+}
+
+.page_header_1 span {
+  font-size: 40px;
+  font-size: 4rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  padding: 3px 20px;
+  color: #fff;
+  border-radius: 10px 0 20px 10px;
+  background: black;
+}
+
+.container_1{
+  text-align:justify;
+  font-size: 32px;
+  margin-left:30px;
+  margin-right:30px;
+  cursor:hand;
+  cursor:pointer; 
+}
+
+.container_1 td {white-space: nowrap;}/*折り返しされない*/
+
+.container_2{
+  text-align:justify;
+  font-size: 32px;
+  margin-left:30px;
+  margin-right:30px;
+}
+
+.container_3{
+  text-align:justify;
+  font-size: 28px;
+  margin-left:30px;
+  margin-right:30px;
+}
+
+.container_4{
+  text-align:justify;
+  font-size: 32px;
+  margin-top: 0px;
+  margin-left:30px;
+  margin-right:30px;
+}
+
+.container_5{
+  text-align:justify;
+  font-size: 28px;
+  padding: 40px 40px;  /* 余白指定 */
+  color:black;
+  width:48%;
+}
+
+.container_6{
+  text-align:justify;
+  font-size: 28px;
+  padding: 40px 40px;  /* 余白指定 */
+  margin-top: 40px;
+  color:black;
+  width:62%;
+}
+.return{
+  width: 200px;
+  height:200px;
+  font-size:30px;
+  font-weight: bold;
+  background-color:rgb(71, 48, 26);
+  color:rgb(235, 226, 217);
+  border: 3px solid #d4dcda;
+  border-radius:10px;
+  padding:20px 30px;
+  text-decoration: none;
+ }
+ 
+ #return_button{
+   text-align:right;
+   margin-right:150px;
+   margin-top: 50px;
+   margin-bottom: 60px;
+ }
+ 
+ .return:hover{
+  color:whitesmoke;
+  border: 3px solid rgb(71, 48, 26);
+ }
+
+.bingo_game_page{
+  background-color: rgb(238, 238, 238);
+}
+.page-header_2{
+  text-align:center;
+  font-size:30px;
+  font-weight:bold;
+  margin:10px 20px;
+}
+
+
+
+
+.table1{
+  font-weight: bold;
+  table-layout:fixed;
+  font-size:22px;
+  text-align:left;
+  margin-left: 0.5%;
+  margin-right:0.5%;
+  margin-top: 10px;
+  cursor:hand; 
+  cursor:pointer;
+  background-color:#d4dcda ;
+  color:rgb(61, 61, 61);
+  border-collapse: collapse;
+}
+
+.table1 td {
+  padding-right:5px;
+  padding-left: 4px;
+  border:2px solid gray;
+}
+.table1 td p{
+  text-indent :-2em;
+  padding-left :2em;
+}
+
+.table1 td:hover{
+  background-color:#d4dcda ;
+  color:black;
+}
+
+.table2{
+  width:350px;
+  height:350px;
+  font-size:38px;
+  text-align:center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  background-color:whitesmoke;
+}
+
+
+.fadein_1 {
+  animation-name:fadeinanime;
+  animation-duration:20s;
+  animation-delay:5s;
+  animation-fill-mode:forwards;
+  opacity: 0;
+  font-size:50px;
+  color:red;
+  font-weight: bold;
+  }
+  
+  @keyframes fadeinanime{
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+
+  
+.fadein_2 {
+  animation-name:fadeinanime;
+  animation-duration:20s;
+  animation-delay:5s;
+  animation-fill-mode:forwards;
+  opacity: 0;
+  font-size:50px;
+  color:rgb(4, 4, 207);
+  font-weight: bold;
+  }
+  
+  @keyframes fadeinanime{
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+
+
+  ::placeholder{
+    color:#c0cac9
+  }
+  
+
+  #input_form {
+    border-collapse:collapse; /* セルの線を重ねる */
+    background-color:whitesmoke;
+    margin-left: auto;
+    margin-right: auto;
+    text-align:justify;
+    font-size: 28px;
+}
+  #input_form tr {
+    border-color: gray;
+    border-style: solid;
+    border-width: 2px 0;
+}
+  #input_form th {
+    padding: 40px 40px 40px 50px;          /* 余白指定 */
+    background-color:  #92b5a9;    /* 背景色指定 */
+    width:77%;
+  }
+
+  #input_form td {
+    padding: 40px 20px 40px 20px;          /* 余白指定 */
+  }
+
+  .container_1 td {white-space: nowrap;}
+
+  #disp-area{
+    border-collapse:collapse; /* セルの線を重ねる */
+    margin-left: auto;
+    margin-right: auto;
+    text-align:justify;
+    font-size: 28px;
+    background-color: white;
+}
+
+#disp-area tr{
+    border-color: rgb(190, 190, 190);
+    border-style: dashed;
+    border-width: 0 0 6px 0;
+}
+
+#disp-area td{
+  padding: 40px 40px;  /* 余白指定 */
+  color:black;
+}
+
+.box1 {
+  position: relative;
+  margin: 4em 2em;
+  padding: 0.5em 1em;
+  border: solid 6px #646668;
+  background-color: #ededee;
+}
+
+.box1 .box-title {
+  position: absolute;
+  display: inline-block;
+  top: -47px;
+  left: -6px;
+  padding: 0 10px;
+  height: 47px;
+  font-size: 36px;
+  background: #646668;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 8px 8px 0 0;
+}
+
+.box1 ol {
+  color:black;
+  font-size: 30px;
+  padding-left:5%;
+}
+
+.box2 {
+  position: relative;
+  margin: 5em 2em;
+  padding: 0.5em 1em;
+  border: solid 4px #a31705;
+  background-color: #ededee;
+}
+
+.box2 .box-title {
+  position: absolute;
+  display: inline-block;
+  top: -47px;
+  left: -6px;
+  padding: 0 9px;
+  height: 47px;
+  font-size: 36px;
+  background: #a31705;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 8px 8px 0 0;
+}
+
+.box2 ul {
+  color:black;
+  font-size: 30px;
+  padding-left:5%;
+  list-style: none;
+}
+
+.box3{
+  padding: 0.5em 1em;
+  margin: 0 2em 2em 2em ;
+  color: #6091d3;/*文字色*/
+  background: #FFF;
+  border: solid 8px #6091d3;/*線*/
+  border-radius: 30px;/*角の丸み*/
+}
+
+.box3 p {
+  margin: 0; 
+  padding: 0;
+  color:black;
+  font-size: 30px;
+}
+
+.page-header_3{
+  text-align:center;
+  font-size:40px;
+}
+
+.page-header_4{
+  text-align:center;
+  font-size:40px;
+  color:black;
+}
+
+.rule{
+  display:flex;
+}
+.bingo_image{
+  padding:8% 0 0 2%;
+}
+
+input.btn{
+  width: 70px;
+  height:47px;
+  padding:5px;
+  font-size:20px;
+}
+
+.mail{
+  text-align:center;
+  font-size:50px;
+  font-weight:bold;
+  color:brown;
+}
+
+.end{
+  margin:2.5% ;
+}

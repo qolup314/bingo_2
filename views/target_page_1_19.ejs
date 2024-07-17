@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    　<!--　出典：マイナンバーカード方式について【e-TAX】　https://www.e-tax.nta.go.jp/kojin/mycd_login.html
+          　出典：マイナンバーカードの健康保険証利用【マイナポータル】https://myna.go.jp/html/hokenshoriyou_top.html-->
+  </head>
+  <body>
+    <h1 class="page_header_1"><span>19</span>マイナンバーは確定申告の医療費控除が簡単になる</h1>
+
+  <article>
+    <div class="container_1">
+
+      <table>
+        <tr><td></td></tr>
+      </table>
+
+      <table>
+        <tr><td>マイナンバーを使えば確定申告の医療費控除が簡単になります。</td></tr>
+      </table>
+
+      <table>
+        <tr><td>令和２年分の所得税の確定申告（予定）から、マイナポータルを経由して医療費情報</td></tr>
+      </table>
+
+      <table>
+        <tr><td>の自動入力が可能になります。長年商売をやっている船山さん（男性、73歳、福島市</td></tr>
+        <tr><td>在住）は、「わたしらみたいに年寄りで商売やっている人間には助かるね。</td></tr>
+        <tr><td>体の具合が悪くて医者にかかれば医療費の控除が受けれるけど、商売やっているので</td></tr>
+        <tr><td>税金の申告の時期と重なるのさ。</td></tr>
+        <tr><td id='negative_1'>細かな数字の仕事は年寄りにはまさに地獄だね。</td></tr>
+        <tr><td id='positive_1'>それが、マイナンバーがあれば作業が楽だね。</td></tr>
+        <tr><td id='positive_2'>マイナポータルを開いて、サクサクっとできるのさ。助かるね。</td></tr>
+      </table>
+
+  
+
+    </div>
+  </article>
+
+  <article>
+    <p class="container_2">
+      というわけで、<br>「マイナンバーは確定申告の医療費控除が簡単になる」は<a class="fadein_1">　正解　</a>です。
+    </p>
+  </article>
+   
+  
+  <br><br>
+  <p id='output_1'></p>
+  <br>
+  <p id='output_2'></p>
+  <br><br>
+
+
+    
+
+    <div id="return_button">
+      <a class="return" href="/bingo_game">ビンゴ画面に戻る</a>
+    </div>
+
+
+    <script>
+      
+
+      var storage=localStorage;
+      
+      var d=new Date();
+      Month=d.getMonth()+1; //getMonth()1月は0になる。
+      time=d.getFullYear()+'/'+Month+'/'+d.getDate()+'/'+d.getHours()+'/'+d.getMinutes()+'/'+d.getSeconds()+'/'+d.getMilliseconds();
+
+      var move=''; //'positive' data
+      //var move_2=''; //'negative' data
+      //var move_3=''; //'close' data
+      var target_page_1_19=''; //whole data of this page
+      var tg_1_19=storage.getItem('tg_1_19'); //a counter added to the key name//
+      
+
+
+      document.addEventListener('DOMContentLoaded', function(){
+      
+  
+        //mouseenter
+        document.getElementById('positive_1').addEventListener('mouseenter', function () {
+          
+          move=move+'positive'+',';
+  
+          //document.getElementById('output_1').textContent =move; 
+      
+        }, false);
+
+        document.getElementById('positive_2').addEventListener('mouseenter', function () {
+          
+          move=move+'positive'+',';
+  
+          //document.getElementById('output_1').textContent =move; 
+      
+        }, false);
+
+
+        document.getElementById('negative_1').addEventListener('mouseenter', function () {
+          
+          move=move+'negative'+',';
+  
+          //document.getElementById('output_1').textContent =move; 
+      
+        }, false);
+
+
+        document.getElementById('return_button').addEventListener('click', function () {
+
+
+          ID=storage.getItem('ID');
+          target_page_1_19=ID+','+'target_page_1_19'+','+time+','+move;
+
+          //document.getElementById('output_2').textContent =target_page_1_19; 
+
+          tg_1_19=storage.getItem('tg_1_19'); //get a counter//
+          tg_1_19=tg_1_19+1; //increment a counter//
+          key='target_page_1_19'+'_'+tg_1_19; //set a new key name//
+          storage.setItem(key, target_page_1_19); //store the value of target_page with a new key name//
+          storage.setItem('tg_1_19', tg_1_19); // store a new key name//
+
+
+        }, false);
+
+
+       
+ 
+      }, false);
+
+
+    </script>
+
+
+
+
+  </body>
+  </html>

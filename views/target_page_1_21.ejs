@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!--　出典：PC　Webzine　　https://www.pc-webzine.com/entry/2017/08/post-35.html=-->
+  </head>
+  <body>
+    <h1 class="page_header_1"><span>21</span>マイナンバーは社員証、職員証として利用可能</h1>
+
+  <article>
+    <div class="container_1">
+
+      <table>
+        <tr><td>マイナンバーは社員証、職員証として利用できます。</td></tr>
+      </table>
+
+      <table>
+        <tr><td>実際、マイナンバーカードを社員証として活用する企業が増えてきています。</td></tr>
+      </table>
+
+      <table>
+        <tr><td>例えば、自治体では徳島県庁が早くから導入し、民間企業ではTKC、NEC、</td></tr>
+        <tr><td>NTTコミュニケーションズ、内田洋行などが活用しています。</td></tr>
+      </table>
+
+      <table>
+        <tr><td>使い方としては、社員の出退勤管理や施設への入退室管理、社内システムへの</td></tr>
+        <tr><td>ログインなど、１枚で様々なことに活用できます。</td></tr>
+      </table>
+
+      <table>
+        <tr><td>面白い使い方としては、新潟県三条市では、災害時の避難所の入退所受付、</td></tr>
+        <tr><td>選挙の投票入場受付などにマイナンバーカードが活用されています。</td></tr>
+      </table>
+
+      <table>
+        <tr><td>また、プリンタを使った印刷のときに本人認証の他に、</td></tr>
+        <tr><td>プリンターでの書類の置き忘れや不正な持ち出しによる情報流出対策に</td></tr>
+        <tr><td>効果的なため注目を集めています。</td></tr>
+      </table>
+     
+      <table>
+        <tr><td>営業の清原さん（男性、38歳、福岡市在住）は、「どこも同じだと思いますが、</td></tr>
+        <tr><td>うちは顧客の情報の管理にはとても気をつかいます。だから、</td></tr>
+        <tr><td id='positive_1'>セキュリティが安心なマイナンバーカードを使ったシステムは安心ですね。」と満足の様子です。</td></tr>
+      </table>
+
+
+
+    </div>
+  </article>
+
+  <article>
+    <p class="container_2">
+      というわけで、<br>「マイナンバーは社員証、職員証として利用可能」は <a class="fadein_1">　正解　</a>です。
+    </p>
+  </article>　
+   
+  
+  <br><br>
+  <p id='output_1'></p>
+  <br>
+  <p id='output_2'></p>
+  <br><br>
+  
+  
+
+    <div id="return_button">
+      <a class="return" href="/bingo_game">ビンゴ画面に戻る</a>
+    </div>
+
+
+    <script>
+      
+
+      var storage=localStorage;
+      
+      var d=new Date();
+      Month=d.getMonth()+1; //getMonth()1月は0になる。
+      time=d.getFullYear()+'/'+Month+'/'+d.getDate()+'/'+d.getHours()+'/'+d.getMinutes()+'/'+d.getSeconds()+'/'+d.getMilliseconds();
+
+      var move=''; //'positive' data
+      //var move_2=''; //'negative' data
+      //var move_3=''; //'close' data
+      var target_page_1_21=''; //whole data of this page
+      var tg_1_21=storage.getItem('tg_1_21'); //a counter added to the key name//
+
+
+
+      document.addEventListener('DOMContentLoaded', function(){
+      
+  
+        //mouseenter
+        document.getElementById('positive_1').addEventListener('mouseenter', function () {
+          
+          move=move+'positive'+',';
+  
+          //document.getElementById('output_1').textContent =move; 
+      
+        }, false);
+
+        
+        document.getElementById('return_button').addEventListener('click', function () {
+
+
+          ID=storage.getItem('ID');
+          target_page_1_21=ID+','+'target_page_1_21'+','+time+','+move;
+
+          //document.getElementById('output_2').textContent =target_page_1_21; 
+
+          tg_1_21=storage.getItem('tg_1_21'); //get a counter//
+          tg_1_21=tg_1_21+1; //increment a counter//
+          key='target_page_1_21'+'_'+tg_1_21; //set a new key name//
+          storage.setItem(key, target_page_1_21); //store the value of target_page with a new key name//
+          storage.setItem('tg_1_21', tg_1_21); // store a new key name//
+
+
+        }, false);
+
+
+       
+ 
+      }, false);
+
+
+    </script>
+
+
+
+  </body>
+  </html>

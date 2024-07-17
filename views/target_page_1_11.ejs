@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!--　出典：https://bitdays.jp/money/cashless/point/mynumbercard_point/53107/-->
+  </head>
+  <body>
+    <h1 class="page_header_1"><span>11</span>マイナンバーはスーパーでタダ</h1>
+
+  <article>
+    <div class="container_1">
+
+      
+      <table>
+        <tr><td>マイナンバーとマイナポイントを混同してはいけません。</td></tr>
+      </table>
+
+      <table>
+        <tr><td>マイナンバーは、国がいろいろな行政のサービスを行うために便利なように交付するも</td></tr>
+      </table>
+
+      <table>
+        <tr><td>のです。一方、マイナポイントは、マイナンバーカードの普及のために、総務省がマイ</td></tr>
+      </table>
+     
+      <table>
+        <tr><td>ナンバーカードの申請をした人に与えるポイントで、キャッシュレス決済時のみ利用</td></tr>
+      </table>
+
+      <table>
+        <tr><td>できます。よって、マイナンバー自体にはタダになったり、割引になる制度はありません。</td></tr>
+      </table>
+
+      <table>
+        <tr><td id='negative_1'>でも、高齢者にはわかりにくいですね。おまけに、高齢者はキャッシュレスで買い物をしない人方が多いですから。</td></tr>
+      </table>
+    
+      <table>
+        <tr><td>長谷川さん（女性、70歳、福島市在住）もその一人。「この間買い物をしたとき、</td></tr>
+      </table>
+      
+      <table>
+        <tr><td>てっきりマイナンバーで割引があると思って、レジでマイナンバーを出したのよ。</td></tr>
+      </table>
+      
+
+      <table>
+        <tr><td id='negative_2'>そしたら、お店の人はポカンとしてたわ。</td><td>だって、テレビでもマイナンバーを持ってた</td></tr>
+      </table>
+
+      <table>
+        <tr><td>ら何とかポイントを使えるとか言ってたから、私も使えると思ったのよ。</td></tr>
+      </table>
+    
+      <table>
+        <tr><td id='negative_3'>孫にもお菓子をたくさん買ってきてやると言ったのに、買えなくてがっかりしてたわ。」</td></tr>
+      </table>
+
+      <table>
+        <tr><td id='negative_4'>世の中、罪作りなことが多いですね。</td></tr>
+      </table>
+
+    
+
+    </div>
+  </article>
+
+  <article>
+    <p class="container_2">
+      というわけで、<br>「マイナンバーはスーパーでタダ」は
+    <a class="fadein_2">　不正解　</a>です。
+    </p>
+  </article>
+   
+
+  <br><br>
+  <p id='output_1'></p>
+  <br>
+  <p id='output_2'></p>
+  <br><br>
+  <!--
+  <p id='output_3'></p>
+  <br>
+  <p id='output_4'></p>
+  <br>
+  -->
+    
+
+    <div id="return_button">
+      <a class="return" href="/bingo_game">ビンゴ画面に戻る</a>
+    </div>
+
+    <script>
+      
+
+      var storage=localStorage;
+      
+      var d=new Date();
+      Month=d.getMonth()+1; //getMonth()1月は0になる。
+      time=d.getFullYear()+'/'+Month+'/'+d.getDate()+'/'+d.getHours()+'/'+d.getMinutes()+'/'+d.getSeconds()+'/'+d.getMilliseconds();
+
+      var move=''; //'positive' data
+      //var move_2=''; //'negative' data
+      //var move_3=''; //'close' data
+      var target_page_1_11=''; //whole data of this page
+      var tg_1_11=storage.getItem('tg_1_11'); //a counter added to the key name//
+
+
+
+      document.addEventListener('DOMContentLoaded', function(){
+      
+  
+        //mouseenter
+        document.getElementById('negative_1').addEventListener('mouseenter', function () {
+          
+          move=move+'negative'+',';
+  
+          //document.getElementById('output_1').textContent =move; 
+      
+        }, false);
+
+        document.getElementById('negative_2').addEventListener('mouseenter', function () {
+          
+          move=move+'negative'+',';
+  
+          //document.getElementById('output_1').textContent =move; 
+      
+        }, false);
+
+
+        document.getElementById('negative_3').addEventListener('mouseenter', function () {
+          
+          move=move+'negative'+',';
+  
+          //document.getElementById('output_1').textContent =move; 
+      
+        }, false);
+
+
+        
+        document.getElementById('negative_4').addEventListener('mouseenter', function () {
+          
+          move=move+'negative'+',';
+  
+          //document.getElementById('output_1').textContent =move; 
+      
+        }, false);
+        
+ 
+        document.getElementById('return_button').addEventListener('click', function () {
+
+          ID=storage.getItem('ID');
+          target_page_1_11=ID+','+'target_page_1_11'+','+time+','+move;
+
+          //document.getElementById('output_2').textContent =target_page_1_11; 
+
+          tg_1_11=storage.getItem('tg_1_11'); //get a counter//
+          tg_1_11=tg_1_11+1; //increment a counter//
+          key='target_page_1_11'+'_'+tg_1_11; //set a new key name//
+          storage.setItem(key, target_page_1_11); //store the value of target_page with a new key name//
+          storage.setItem('tg_1_11', tg_1_11); // store a new key name//
+
+        }, false);
+
+
+      }, false);
+
+
+    </script>
+
+
+  </body>
+
+  </html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1 class="page_header_1"><span>１</span>身分証明に使えるマイナンバーカード</h1>
+
+    <div class="container_1">
+    <table>
+      <tr><td>マイナンバーカードは身分証明書として利用できます。</td></tr>
+    </table>
+
+    <table>
+      <tr><td>例えば、これまで運転免許証、健康保険証等で身分を証明しなければならなかった</td></tr>
+    </table>
+
+    <table>
+      <tr><td>場合でも、マイナンバーカードが利用できます。</td></tr>
+    </table>
+
+    <table>
+      <tr><td>今より身分を証明できるものが増えて</td><td id='positive_1'>助かりますね。</td></tr>
+    </table>
+
+    <table>
+      <tr><td>カードを作るときは</td><td id='negative_1'>少し面倒でも、</td><td>マイナンバーカード1枚でいろいろな場面で</td></tr>
+    </table>
+
+    <table>
+      <tr><td>身分の証明に使えて、</td><td id='positive_2'>便利なのでニッコリ。</td></tr>
+    </table>
+
+    <table>
+      <tr><td>マイナンバーカード1枚が身分証明に使えると、</td><td id='positive_3'>簡単便利でみんな笑顔に。</td></tr>
+    </table>
+
+
+    <table>
+      <tr><td>五十嵐さん（男性、60歳、栃木県在住）も、「私らのような農業をやっている者は、</td></tr>
+    </table>
+
+    <table>
+      <tr><td>ちゃんと身分がわかるものが少なくて困っていたんだよ。これでやっと身分がわか</td></tr>
+    </table>
+
+    <table>
+      <tr><td>るものができてよかったよ。」と</td><td id='positive_4'>喜んでいます。</td></tr>
+    </table>
+
+    <table>
+      <tr><td>マイナンバーカードのおかげで</td><td id='positive_5'>今日も楽ちん楽ちん。</td></tr>
+    </table>
+
+    <table id='close_1'>
+      <tr><td>皆さんのお仲間にもお勧めすれば、きっと喜んでいただけるので、</td><td id='positive_6'>皆ハッピー。</td></tr>
+    </table>
+    </div>
+
+    
+    <article>
+      <p class="container_2">
+        というわけで、<br>「マイナンバーカードは身分証明に使える。」は<a class="fadein_1">　正解　</a>です。
+      </p>
+    </article>
+
+  
+    <br><br>
+    <p id='output_1'></p>
+    <p id='output_2'></p>
+    <br><br>
+
+
+
+    <div id="return_button">
+        <a class="return" href="/bingo_game">ビンゴ画面に戻る</a>
+    </div>   
+
+
+    <script>
+      
+      var storage=localStorage;
+      
+      var d=new Date();
+      Month=d.getMonth()+1; //getMonth()1月は0になる。
+      time=d.getFullYear()+'/'+Month+'/'+d.getDate()+'/'+d.getHours()+'/'+d.getMinutes()+'/'+d.getSeconds()+'/'+d.getMilliseconds();
+
+      var move=''; //'positive' data
+      //var move_2=''; //'negative' data
+      //var move_3=''; //'close' data
+      var target_page_1_1=''; //whole data of this page
+      var tg_1_1=storage.getItem('tg_1_1'); //a counter added to the key name//
+      
+      
+      document.addEventListener('DOMContentLoaded', function(){
+    
+
+        document.getElementById('positive_1').addEventListener('mouseenter', function () {
+        
+          move=move+'positive'+',';
+
+          //document.getElementById('output_1').textContent =move; 
+    
+          
+        }, false);
+      
+        document.getElementById('positive_2').addEventListener('mouseenter', function () {
+        
+          move=move+'positive'+',';
+
+          //document.getElementById('output_1').textContent =move; 
+
+           
+        }, false);
+
+        document.getElementById('positive_3').addEventListener('mouseenter', function () {
+        
+          move=move+'positive'+',';
+
+          //document.getElementById('output_1').textContent =move; 
+         
+  
+        }, false);
+
+        document.getElementById('positive_4').addEventListener('mouseenter', function () {
+        
+          move=move+'positive'+',';
+
+          //document.getElementById('output_1').textContent =move; 
+
+
+        }, false);
+
+        document.getElementById('positive_5').addEventListener('mouseenter', function () {
+        
+          move=move+'positive'+',';
+
+          //document.getElementById('output_1').textContent =move; 
+
+        
+        }, false);
+
+        document.getElementById('positive_6').addEventListener('mouseenter', function () {
+        
+          move=move+'positive'+',';
+
+          //document.getElementById('output_1').textContent =move; 
+     
+
+        }, false);
+
+        document.getElementById('negative_1').addEventListener('mouseenter', function () {
+        
+          move=move+'negative'+',';
+
+          //document.getElementById('output_1').textContent =move; 
+
+          
+        }, false);
+
+        /*
+        document.getElementById('close_1').addEventListener('mouseenter', function () {
+        
+          move=move+'close'+',';
+
+          //document.getElementById('output_1').textContent =move; 
+       
+
+        }, false);
+        */
+
+
+        document.getElementById('return_button').addEventListener('click', function () {
+
+
+            ID=storage.getItem('ID');
+            target_page_1_1=ID+','+'target_page_1_1'+','+time+','+move;
+
+            //document.getElementById('output_2').textContent =target_page_1_1; 
+            
+            tg_1_1=storage.getItem('tg_1_1'); //get a counter//
+            tg_1_1=tg_1_1+1; //increment a counter//
+            key='target_page_1_1'+'_'+tg_1_1; //set a new key name//
+            storage.setItem(key, target_page_1_1); //store the value of target_page with a new key name//
+            storage.setItem('tg_1_1', tg_1_1); // store a new key name//
+            
+    
+
+        }, false);
+
+
+      }, false);
+
+          
+      </script>
+    
+
+  </body>
+</html>
+

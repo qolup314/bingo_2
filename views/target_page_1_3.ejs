@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!--出典：https://media.xid.inc/my-number-card/children-my-number/-->
+  </head>
+  <body>
+    <h1 class="page_header_1"><span>３</span>マイナカードの申請は必ず本人が手続</h1>
+
+  <article>
+      <div class="container_1">
+      <table>
+        <tr><td>マイナンバーは日本在住の人全員に付され、子供にもマイナンバーが付けられます。</td></tr>
+      </table>  
+      
+      <table>
+        <tr><td id='negative_1'>でも、小さな子どもが1人でマイナンバーカードの手続きをすることはできませんね。</td></tr>
+      </table> 
+     
+      <table>
+        <tr><td>それで、15歳未満は法定代理人、他自治体により申請をサポートするサービスがあり</td></tr>
+      </table> 
+
+      <table>
+        <tr><td>ます。</td></tr>
+      </table> 
+  </div>
+  </article>
+
+  <article>
+    <p class="container_2">
+      というわけで、<br>「マイナカードの申請は必ず本人が手続」は <a class="fadein_2">　不正解　</a>です。
+    </p>
+  </article>
+   
+    
+    <br><br>
+    <p id='output_1'></p>
+    <br>
+    <p id='output_2'></p>
+    <br>
+    <!--
+    <p id='output_3'></p>
+    <br>
+    <p id='output_4'></p>
+    <br>
+    -->
+    
+
+    <div id="return_button">
+      <a class="return" href="/bingo_game">ビンゴ画面に戻る</a>
+    </div>
+
+
+    <script>
+      
+      document.addEventListener('DOMContentLoaded', function(){
+      
+        var storage=localStorage;
+      
+        var d=new Date();
+        Month=d.getMonth()+1; //getMonth()1月は0になる。
+        time=d.getFullYear()+'/'+Month+'/'+d.getDate()+'/'+d.getHours()+'/'+d.getMinutes()+'/'+d.getSeconds()+'/'+d.getMilliseconds();
+
+        var move='';
+        var taeget_page_1_3='';
+        var tg_1_3=storage.getItem('tg_1_3'); //a counter added to the key name//
+
+
+        //mouseenter
+        document.getElementById('negative_1').addEventListener('mouseenter', function () {
+          
+          move=move+'negative'+',';
+  
+          //document.getElementById('output_1').textContent =move; 
+      
+        }, false);
+  
+        document.getElementById('return_button').addEventListener('click', function () {
+
+          ID=storage.getItem('ID');
+          target_page_1_3=ID+','+'target_page_1_3'+','+time+','+move;
+
+          //document.getElementById('output_2').textContent =target_page_1_3; 
+          
+          tg_1_3=storage.getItem('tg_1_3'); //get a counter//
+          tg_1_3=tg_1_3+1; //increment a counter//
+          key='target_page_1_3'+'_'+tg_1_3; //set a new key name//
+          storage.setItem(key, target_page_1_3); //store the value of target_page with a new key name//
+          storage.setItem('tg_1_3', tg_1_3); // store a new key name//
+          
+          
+
+        }, false);
+
+
+      }, false);
+
+
+    </script>
+
+
+  </body>
+
+  </html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1 class="main_title">３．基本情報の入力</h1>
+   
+    <form action="#" id="form">
+      <table  id="input_form">
+        <tbody>         
+            <tr>
+              
+                <th>あなたのIDを入力してください　<span style="color:brown">※必須</span></th>
+                <td><input type="text"  placeholder="ID" style="width:100px;padding:8px;font-size:24px;background-color: rgb(252, 230, 230);" name="word_1" id="ID" required> 
+                    <input type="button" class="btn" value="決定" id="ID_input">
+                </td>
+            </tr>
+
+             <tr>
+                <th> あなたの性別に該当する番号を1個入力してください。<br><a>　　　１ 男性<br>　　　２ 女性<br>　　　３ その他</a></th>
+                <td><input type="text" placeholder="性別" style="width: 60px;padding:8px;font-size:24px;" name="word_2" id="sex"> 
+                  <input type="button" style="width: 80px;padding:5px;font-size:20px;"value="決定" id='sex_input'>
+                </td>  
+            </tr>
+
+             <tr>
+                <th>あなたの満年齢を入力してください。</th>
+                <td><input type='text' placeholder="満年齢" style="width: 53px;padding:8px;font-size:18px;" name='word_3' id='age'>歳
+                  <input type='button'  style="width: 80px;padding:5px;font-size:20px;"value='決定' id='age_input'>
+                </td>
+            </tr>
+
+            <tr>
+                <th>あなたの最終学歴を入力してください。<br><a>　　　１ 高等学校<br>　　　２ 専門学校<br>　　　３ 短大<br>　　　４ 大学<br>　　　５ 大学院<br>　　　６ その他（中退も含む）</a></th>
+                <td> <input type='text' placeholder="学歴" style="width: 53px;padding:8px;font-size:24px;" name='word_4' id='academic'> 
+                  <input type='button' style="width: 80px;padding:5px;font-size:20px;"value='決定' id='academic_input'>
+                </td>
+            </tr>
+
+            <tr>
+                <th>あなたの同居者について入力してください。<br>
+                  <a>　　　１ 1人暮らし<br>　　　２ 配偶者と2人暮らし<br>　　　３ 配偶者を含まない2人以上<br>　　　４ 配偶者を含む3人以上　</a></th>
+                <td><input type='text' placeholder="同居者" style="width: 58px;padding:8px;font-size:20px;" name='word_5' id='family'>
+                  <input type='button' style="width:78px;padding:5px;font-size:20px;"value='決定' id='family_input'></td>
+            </tr>
+
+        </tbody>
+    </table>
+    </form>
+
+
+    <br><br>
+    <p id='title_output'></p>
+    <p id='time_output'></p>
+    <p id='basic_info_output'></p>
+
+    <p id="output_1"></p>
+    <p id="output_2"></p>
+    <p id='output_3'></p>
+    <p id='output_4'></p>
+    <p id='output_5'></p>
+    <br><br>
+
+
+
+    <div id="start_button">
+    <a class="start" href='future_time_1'>４．未来展望へ</a>
+    </div>
+    
+    
+
+  <script>
+  
+  var storage=localStorage;
+
+
+
+  document.addEventListener('DOMContentLoaded', function(){
+
+    //document.getElementById('title_output').textContent ='このページは基本情報入力ページです。';
+
+
+    var d=new Date();
+    Month=d.getMonth()+1; //getMonth()1月は0になる。
+    time=d.getFullYear()+'/'+Month+'/'+d.getDate()+'/'+d.getHours()+'/'+d.getMinutes()+'/'+d.getSeconds()+'/'+d.getMilliseconds();
+    //document.getElementById('time_output').textContent ='今は'+time+'です。';
+
+    var search_1;
+    var search_2;
+
+    document.getElementById('ID_input').addEventListener('click', function () {
+    
+    search_1 = document.getElementById('ID').value;
+    //document.getElementById('output_1').textContent ='あなたのIDは'+search_1+'です。';
+
+    }, false);
+
+
+    document.getElementById('sex_input').addEventListener('click', function () {
+    
+    search_2 = document.getElementById('sex').value;
+   // document.getElementById('output_2').textContent ='あなたの性別は'+search_2+'です。';
+    
+    }, false);
+
+
+    document.getElementById('age_input').addEventListener('click', function () {
+    
+    search_3 = document.getElementById('age').value;
+    //document.getElementById('output_3').textContent ='あなたの年齢は満'+search_3+'歳です。';
+
+    }, false);
+
+
+    document.getElementById('academic_input').addEventListener('click', function () {
+    
+    search_4 = document.getElementById('academic').value;
+    //document.getElementById('output_4').textContent ='あなたの最終学歴は'+search_4+'です。';
+
+    }, false);
+
+
+    document.getElementById('family_input').addEventListener('click', function () {
+    
+    search_5 = document.getElementById('family').value;
+    //document.getElementById('output_5').textContent ='あなたの同居者は'+search_5+'です。';
+
+
+    basic_info_output=search_1+','+time+','+'basic_info'+','+search_1+','+search_2+','+search_3+','+search_4+','+search_5;
+    //document.getElementById('basic_info_output').textContent ='入力情報は'+basic_info_output+'です。';
+    storage.setItem('basic_info', basic_info_output);
+    storage.setItem('ID', search_1);
+
+    }, false);
+  
+   
+  }, false);
+
+  </script>
+
+  </body>
+
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+       <!--出典：https://media.xid.inc/my-number-card/children-my-number/-->
+  </head>
+  <body>
+    <h1 class="page_header_1"><span>４</span>マイナンバーは健康保険証</h1>
+
+  <article>
+    <div class="container_1">
+
+      <table>
+        <tr><td>２０２１年１０月からマイナンバーカードが健康保険証として利用できるようになり</td></tr>
+      </table>
+
+
+      <table>
+        <tr><td>ました。例えば、転職・結婚・引越ししても、新しい健康保険証の発行を待たずに、</td></tr>
+      </table>
+
+      <table>
+        <tr><td id='positive_1'>役所での異動届等の手続きが完了次第、マイナンバーカードで医療機関・薬局が利用できます。</td></tr>
+      </table>
+
+
+      <table>
+        <tr><td id='negative_1'>「いやー、引っ越し早々子供が熱を出してしまって。あの時は本当に困りました。</td></tr>
+      </table>
+
+      <table>
+        <tr><td id='negative_2'>おそらく引っ越しの疲れが出たのでしょう。</td></tr>
+      </table>
+       
+      <table>
+        <tr><td>でも、区役所で転入の手続きを済ませると、</td></tr>
+      </table>
+
+      <table>
+        <tr><td id='positive_2'>もう健康保険証が使えるというので助かりましたよ。</td></tr>
+      </table>
+
+      <table>
+        <tr><td>行政のスピード化はわれわれ納税者にとってもありがたいです。」と</td></tr>
+      </table>    
+          
+      <table>    
+        <tr><td id='positive_3'>大阪から東京へ転勤になった伊藤さん（男性、36歳）は、感謝していました。</td></tr>
+      </table>
+
+
+    </div>
+  </article>
+
+  <article>
+    <p class="container_2">
+      というわけで、<br>「マイナンバーは健康保険証」は<a class="fadein_1">　正解　</a>です。
+    </p>
+  </article>
+   
+    
+    <br><br>
+    <p id='output_1'></p>
+    <br>
+    <p id='output_2'></p>
+    <br><br>
+    <!--
+    <p id='output_3'></p>
+    <br>
+    <p id='output_4'></p>
+    <br>
+    <p id='output_5'></p>
+    <br>
+    -->
+   
+
+    <div id="return_button">
+      <a class="return" href="/bingo_game">ビンゴ画面に戻る</a>
+    </div>
+
+
+    <script>
+      
+      document.addEventListener('DOMContentLoaded', function(){
+      
+        var storage=localStorage;
+      
+        var d=new Date();
+        Month=d.getMonth()+1; //getMonth()1月は0になる。
+        time=d.getFullYear()+'/'+Month+'/'+d.getDate()+'/'+d.getHours()+'/'+d.getMinutes()+'/'+d.getSeconds()+'/'+d.getMilliseconds();
+
+        var move='';
+        var target_page_1_4='';
+        var tg_1_4=storage.getItem('tg_1_4'); //a counter added to the key name//
+
+
+        //mouseenter
+        document.getElementById('positive_1').addEventListener('mouseenter', function () {
+          
+          move=move+'positive'+',';
+  
+          //document.getElementById('output_1').textContent =move; 
+      
+        }, false);
+  
+        document.getElementById('positive_2').addEventListener('mouseenter', function () {
+          
+          move=move+'positive'+',';
+  
+          //document.getElementById('output_1').textContent =move; 
+      
+        }, false);
+
+        document.getElementById('positive_3').addEventListener('mouseenter', function () {
+          
+          move=move+'positive'+',';
+  
+          //document.getElementById('output_1').textContent =move; 
+      
+        }, false);
+
+        document.getElementById('negative_1').addEventListener('mouseenter', function () {
+          
+          move=move+'negative'+',';
+  
+          //document.getElementById('output_1').textContent =move; 
+      
+        }, false);
+
+        document.getElementById('negative_2').addEventListener('mouseenter', function () {
+          
+          move=move+'negative'+',';
+  
+          //document.getElementById('output_1').textContent =move; 
+      
+        }, false);
+
+        document.getElementById('return_button').addEventListener('click', function () {
+
+          ID=storage.getItem('ID');
+          target_page_1_4=ID+','+'target_page_1_4'+','+time+','+move;
+
+          //document.getElementById('output_2').textContent =target_page_1_4; 
+          
+          tg_1_4=storage.getItem('tg_1_4'); //get a counter//
+          tg_1_4=tg_1_4+1; //increment a counter//
+          key='target_page_1_4'+'_'+tg_1_4; //set a new key name//
+          storage.setItem(key, target_page_1_4); //store the value of target_page with a new key name//
+          storage.setItem('tg_1_4', tg_1_4); // store a new key name//
+          
+          
+        }, false);
+
+
+      }, false);
+
+
+    </script>
+
+
+
+  </body>
+  </html>

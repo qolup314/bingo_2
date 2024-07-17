@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!--出典：https://www.e-tax.nta.go.jp/topics/topics_mynumbercard_data.htm#:~:text=-->
+  </head>
+  <body>
+    <h1 class="page_header_1"><span>18</span>マイナカードは無期限で使える</h1>
+
+  <article>
+    <div class="container_1">
+
+      <table>
+        <tr><td></td></tr>
+      </table>
+
+
+
+      <table>
+        <tr><td>マイナンバーカードの有効期間は、発行の日から１０回目の誕生日までです。</td></tr>
+      </table>
+
+      <table>
+        <tr><td>ただし、２０歳未満の方のマイナンバーカードの有効期間については、容姿の変動が</td></tr>
+      </table>
+
+      <table>
+        <tr><td>大きいことから、顔写真を考慮して５回目の誕生日となります。</td></tr>
+      </table>
+
+      <table>
+        <tr><td>１０歳のお子さんのお母さんである原田さん（35歳、静岡市在住）は、</td></tr>
+        <tr><td>「子どものマイナンバーカードは早くとったけど、５年間しか有効でないなんて不便よね。</td></tr>
+        <tr><td id='negative_1'>忙しいときなんか、更新の手続きも面倒になるわよね。」と、ぼやいていました。</td></tr>
+      </table>
+
+      <table>
+        <tr><td>でも、高齢者の中には違った意見の方もいらっしゃるようです。</td></tr>
+      </table>
+
+      <table>
+        <tr><td>戸田さん（女性、70歳、島根県在住）には９歳のお孫さんがいるのですが、</td></tr>
+      </table>    
+          
+      <table>
+        <tr><td>こんなことを言っていました。</td></tr>
+      </table>    
+
+      <table>   
+        <tr><td>「親が、孫のマイナンバーカードの有効期限が切れると気にしていたけど、</td></tr>
+        <tr><td>通知がきたの。そこに、更新のやり方が書いてあったので、パソコンを使って孫と</td></tr>
+        <tr><td>一緒に手続きしてみたわ。</td></tr>
+        <tr><td id='positive_1'>孫とのふれ合いができて楽しかったわよ。</td></tr>
+        <tr><td id='positive_2'>孫も、自分で更新する時期が来るので、そのときの練習になってよかっわね。」</td></tr>
+      </table>
+
+
+
+    </div>
+  </article>
+
+  <article>
+    <p class="container_2">
+      というわけで、「マイナカードは無期限で使える」は
+    <a class="fadein_2">　不正解　</a>です。
+    </p>
+  </article>　
+   
+
+
+  <br><br>
+  <p id='output_1'></p>
+  <br>
+  <p id='output_2'></p>
+  <br><br>
+  
+
+
+    
+    <div id="return_button">
+      <a class="return" href="/bingo_game">ビンゴ画面に戻る</a>
+    </div>
+
+    <script>
+      
+      var storage=localStorage;
+      
+      var d=new Date();
+      Month=d.getMonth()+1; //getMonth()1月は0になる。
+      time=d.getFullYear()+'/'+Month+'/'+d.getDate()+'/'+d.getHours()+'/'+d.getMinutes()+'/'+d.getSeconds()+'/'+d.getMilliseconds();
+
+      var move=''; //'positive' data
+      //var move_2=''; //'negative' data
+      //var move_3=''; //'close' data
+      var target_page_1_18=''; //whole data of this page
+      var tg_1_18=storage.getItem('tg_1_18'); //a counter added to the key name//
+
+
+
+      document.addEventListener('DOMContentLoaded', function(){
+      
+  
+        //mouseenter
+        document.getElementById('positive_1').addEventListener('mouseenter', function () {
+          
+          move=move+'positive'+',';
+  
+          //document.getElementById('output_1').textContent =move; 
+      
+        }, false);
+
+        document.getElementById('positive_2').addEventListener('mouseenter', function () {
+          
+          move=move+'positive'+',';
+  
+          //document.getElementById('output_1').textContent =move; 
+      
+        }, false);
+
+
+        document.getElementById('negative_1').addEventListener('mouseenter', function () {
+          
+          move=move+'negative'+',';
+  
+          //document.getElementById('output_1').textContent =move; 
+      
+        }, false);
+
+
+        document.getElementById('return_button').addEventListener('click', function () {
+
+
+          ID=storage.getItem('ID');
+          target_page_1_18=ID+','+'target_page_1_18'+','+time+','+move;
+
+          //document.getElementById('output_2').textContent =target_page_1_18; 
+
+          tg_1_18=storage.getItem('tg_1_18'); //get a counter//
+          tg_1_18=tg_1_18+1; //increment a counter//
+          key='target_page_1_18'+'_'+tg_1_18; //set a new key name//
+          storage.setItem(key, target_page_1_18); //store the value of target_page with a new key name//
+          storage.setItem('tg_1_18', tg_1_18); // store a new key name//
+
+
+        }, false);
+
+
+
+      }, false);
+
+
+    </script>
+
+
+
+
+  </body>
+  </html>

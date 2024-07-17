@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    　<!--　　出典：マイナンバーカード　総合サイトhttps://www.kojinbango-card.go.jp/kojinbango-merit/#merit2
+-->
+  </head>
+  <body>
+    <h1 class="page_header_1"><span>17</span>マイポータルで暮らしが便利になる</h1>
+
+  <article>
+    <div class="container_1">
+
+      <table>
+        <tr><td>マイナポータルで暮らしを便利にすることができます。</td></tr>
+      </table>
+
+      <table>
+        <tr><td>例えば、行政機関が保有する自分の個人情報を行政機関の間でどのようにやりとり</td></tr>
+      </table>
+
+      <table>
+        <tr><td>されたのかを確認することができます。また、今後はマイナポータルを経由して、</td></tr>
+        <tr><td>本人同意のもとに情報を金融機関等に提供することができるようになる予定で、</td></tr>
+      </table>
+
+      <table>
+        <tr><td>手続きに必要な書類などの取得や提出が不要になります。</td></tr>
+      </table>    
+           
+    
+      <table>
+        <tr><td>青山さん（女性、61歳、愛媛県在住）は、</td></tr>
+      </table>    
+           
+      <table> 
+        <tr><td>「マイナンバーカードをとってからだいぶたつのよ。この間、マイナンバーカードで</td></tr>
+      </table>  
+      
+      <table> 
+        <tr><td>どんなことをやっているか知りたくて、自分の利用の情報を調べてみたの。そしたら、</td></tr>
+      </table> 
+          
+      <table>
+        <tr><td id='positive_1'>マイナポータルっていうのを使って確認できたわ。とっても安心。」と言っていました。</td></tr>
+      </table>  
+
+
+
+    </div>
+  </article>
+
+  <article>
+    <p class="container_2">
+      というわけで、<br>「マイポータルで暮らしが便利になる」は <a class="fadein_1">　正解　</a>です。
+    </p>
+  </article>
+   
+  
+
+  <br><br>
+  <p id='output_1'></p>
+  <br>
+  <p id='output_2'></p>
+  <br><br>
+    
+
+    <div id="return_button">
+      <a class="return" href="/bingo_game">ビンゴ画面に戻る</a>
+    </div>
+
+    <script>
+    
+    var storage=localStorage;
+      
+      var d=new Date();
+      Month=d.getMonth()+1; //getMonth()1月は0になる。
+      time=d.getFullYear()+'/'+Month+'/'+d.getDate()+'/'+d.getHours()+'/'+d.getMinutes()+'/'+d.getSeconds()+'/'+d.getMilliseconds();
+
+      var move=''; //'positive' data
+      //var move_2=''; //'negative' data
+      //var move_3=''; //'close' data
+      var target_page_1_17=''; //whole data of this page
+      var tg_1_17=storage.getItem('tg_1_17'); //a counter added to the key name//
+
+
+
+      document.addEventListener('DOMContentLoaded', function(){
+      
+        
+        //mouseenter
+        document.getElementById('positive_1').addEventListener('mouseenter', function () {
+          
+          move=move+'positive'+',';
+  
+          //document.getElementById('output_1').textContent =move; 
+      
+        }, false);
+
+        
+        document.getElementById('return_button').addEventListener('click', function () {
+
+          ID=storage.getItem('ID');
+          target_page_1_17=ID+','+'target_page_1_17'+','+time+','+move;
+
+          //document.getElementById('output_2').textContent =target_page_1_17; 
+
+          tg_1_17=storage.getItem('tg_1_17'); //get a counter//
+          tg_1_17=tg_1_17+1; //increment a counter//
+          key='target_page_1_17'+'_'+tg_1_17; //set a new key name//
+          storage.setItem(key, target_page_1_17); //store the value of target_page with a new key name//
+          storage.setItem('tg_1_17', tg_1_17); // store a new key name//
+
+
+        }, false);
+
+
+      }, false);
+
+
+    </script>
+
+
+  </body>
+  </html>

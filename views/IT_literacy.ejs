@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1 class="main_title">５．ITリテラシー</h1>
+    
+    <table  id="input_form">
+      <tbody>
+          <tr>
+            <th >A　パソコンとスマートフォンの起動と終了ができる。<br><a>　　　１ はい<br>　　　２ いいえ</th>
+            <td ><input type="text" placeholder="回答" style="width: 53px;padding:8px;font-size:24px;" name="A" id="A"> 
+                <input type="button" style="width: 100px;padding:5px;font-size:20px;"value="決定" id='A_input'>
+            </td>
+          </tr>
+
+          <tr>
+            <th >B　パソコンでもスマートフォンでも、文字の入力が苦労しないでできる。<br><a>　　　１ はい<br>　　　２ いいえ</th>
+            <td ><input type="text" placeholder="回答" style="width: 53px;padding:8px;font-size:24px;" name="B" id="B"> 
+              <input type="button" style="width: 100px;padding:5px;font-size:20px;"value="決定" id='B_input'>
+            </td>
+          </tr>
+
+          <tr>
+            <th >C　インターネットで自分の知りたい情報を収集できる。<br><a>　　　１ はい<br>　　　２ いいえ</th>
+            <td ><input type="text" placeholder="回答" style="width: 53px;padding:8px;font-size:24px;" name="C" id="C"> 
+              <input type="button" style="width: 100px;padding:5px;font-size:20px;"value="決定" id='C_input'>
+            </td>
+          </tr>
+
+          <tr>
+            <th >D　アプリやソフトのダウンロードやインストールができる。<br><a>　　　１ はい<br>　　　２ いいえ</th>
+            <td ><input type="text" placeholder="回答" style="width: 53px;padding:8px;font-size:24px;" name="D" id="D"> 
+              <input type="button" style="width: 100px;padding:5px;font-size:20px;"value="決定" id='D_input'>
+            </td>
+          </tr>
+
+          <tr>
+            <th >E　ワンクリック詐欺やフィッシングメールがどのようなことか意味がわかる。<br><a>　　　１ はい<br>　　　２ いいえ</th>
+            <td ><input type="text" placeholder="回答" style="width: 53px;padding:8px;font-size:24px;" name="E" id="E"> 
+              <input type="button" style="width: 100px;padding:5px;font-size:20px;"value="決定" id='E_input'>
+            </td>
+          </tr>
+
+          <tr>
+            <th >F　ワンクリック詐欺やフィッシングメールを見分けることができる。<br><a>　　　１ はい<br>　　　２ いいえ</th>
+            <td ><input type="text" placeholder="回答" style="width: 53px;padding:8px;font-size:24px;" name="F" id="F"> 
+              <input type="button" style="width: 100px;padding:5px;font-size:20px;"value="決定" id='F_input'>
+            </td>
+          </tr>
+
+          <tr>
+            <th >G　Wi-Fiとキャリア回線の切り替えができる。<br><a>　　　１ はい<br>　　　２ いいえ</th>
+            <td ><input type="text" placeholder="回答" style="width: 53px;padding:8px;font-size:24px;" name="G" id="G"> 
+              <input type="button" style="width: 100px;padding:5px;font-size:20px;"value="決定" id='G_input'>
+            </td>
+          </tr>
+
+          <tr>
+            <th >H　セキュリティに関するリスクへの理解があり対策ができる。<br><a>　　　１ はい<br>　　　２ いいえ</th>
+            <td ><input type="text" placeholder="回答" style="width: 53px;padding:8px;font-size:24px;" name="H" id="H"> 
+              <input type="button" style="width: 100px;padding:5px;font-size:20px;"value="決定" id='H_input'>
+            </td>
+          </tr>
+
+          <tr>
+            <th >I　どんな電子機器でも初めて見てある程度まで操作ができる。<br><a>　　　１ はい<br>　　　２ いいえ</th>
+            <td ><input type="text" placeholder="回答" style="width: 53px;padding:8px;font-size:24px;" name="I" id="I"> 
+              <input type="button" style="width: 100px;padding:5px;font-size:20px;"value="決定" id='I_input'>
+            </td>
+          </tr>
+
+
+      </tbody>
+    </table>
+
+
+    <br><br>
+    <p id="output_1"></p>
+    <p id="output_2"></p>
+    <p id='output_3'></p>
+    <p id='output_4'></p>
+    <p id='output_5'></p>
+    <p id="output_6"></p>
+    <p id="output_7"></p>
+    <p id='output_8'></p>
+    <p id='output_9'></p>
+    <p id='output_10'></p>
+    <br><br>
+    
+
+
+    <div id="start_button">
+    <a class="start" href='my_number_1'>６．マイナンバーについてへ</a>
+    </div>
+      
+
+    <script>
+
+      var storage=localStorage;
+
+      var search_1=0;
+      var search_2=0;
+      var search_3=0;
+      var search_4=0;
+      var search_5=0;
+      var search_6=0;
+      var search_7=0;
+      var search_8=0;
+      var search_9=0;
+      //var search_10=0;
+      var search=0;
+
+      document.addEventListener('DOMContentLoaded', function(){
+
+        document.getElementById('A_input').addEventListener('click', function () {
+
+          search_1 = document.getElementById('A').value;
+          //document.getElementById('output_1').textContent ='あなたのAは'+search_1+'です。';
+
+        }, false);
+
+        document.getElementById('B_input').addEventListener('click', function () {
+
+          search_2 = document.getElementById('B').value;
+          //document.getElementById('output_2').textContent ='あなたのBは'+search_2+'です。';
+
+        }, false);
+
+        document.getElementById('C_input').addEventListener('click', function () {
+
+          search_3 = document.getElementById('C').value;
+          //document.getElementById('output_3').textContent ='あなたのCは'+search_3+'です。';
+
+        }, false);
+
+        document.getElementById('D_input').addEventListener('click', function () {
+
+          search_4 = document.getElementById('D').value;
+          //document.getElementById('output_4').textContent ='あなたのDは'+search_4+'です。';
+
+        }, false);
+
+       document.getElementById('E_input').addEventListener('click', function () {
+
+          search_5 = document.getElementById('E').value;
+          //document.getElementById('output_5').textContent ='あなたのEは'+search_5+'です。';
+
+        }, false);
+
+        document.getElementById('F_input').addEventListener('click', function () {
+
+          search_6 = document.getElementById('F').value;
+          //document.getElementById('output_6').textContent ='あなたのFは'+search_6+'です。';
+
+        }, false);
+
+        document.getElementById('G_input').addEventListener('click', function () {
+
+          search_7 = document.getElementById('G').value;
+          //document.getElementById('output_7').textContent ='あなたのGは'+search_7+'です。';
+
+        }, false);
+
+        document.getElementById('H_input').addEventListener('click', function () {
+
+          search_8 = document.getElementById('H').value;
+          //document.getElementById('output_8').textContent ='あなたのHは'+search_8+'です。';
+
+        }, false);
+
+
+        document.getElementById('I_input').addEventListener('click', function () {
+
+          search_9 = document.getElementById('I').value;
+          //document.getElementById('output_9').textContent ='あなたのIは'+search_9+'です。';
+
+          ID=storage.getItem('ID');
+          search=ID+','+'IT_literacy'+','+search_1+','+search_2+','+search_3+','+search_4+','+search_5+','+search_6+','+search_7+','+search_8+','+search_9;
+          //document.getElementById('output_10').textContent ='あなたの回答は'+search+'です。';
+          
+          storage.setItem('IT_literacy', search);
+
+        }, false);
+
+
+      }, false);
+
+
+    </script>
+
+
+      
+  </body>
+      
+</html>   

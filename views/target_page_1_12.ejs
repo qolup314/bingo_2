@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!--　出典：https://www.soumu.go.jp/main_sosiki/joho_tsusin/top/local_support/ict/jirei/2019_009.html -->
+  </head>
+  <body>
+    <h1 class="page_header_1"><span>12</span>マイナンバーはタクシーが安くなる</h1>
+
+  <article>
+    <div class="container_1">
+
+    <table>
+      <tr><td>残念ながら、原則マイナンバーカードの利用ではタクシーの運賃は変わりません。</td></tr>
+    </table>
+
+    <table>
+      <tr><td>但し、マイナンバーカードで高齢者の移動支援を行っている自治体があります。</td></tr>
+    </table>
+    　
+    <table>
+      <tr><td>これは、マイナンバーカード自体にタクシー運賃の割引機能を付けるということ</td></tr>
+    </table>
+    
+    <table>
+      <tr><td>ではありません。タクシー運賃は変更しない代わりに、タクシー割引券を自治体</td></tr>
+    </table>
+    
+    <table>
+      <tr><td>が補助する制度です。そして、紙で支給していた補助券の役目をマイナンバーカ</td></tr>
+    </table>
+
+    <table>
+      <tr><td>ードで行うというものです。また、Suicaなどとマイナンバーカードを登録すると、</td></tr>
+    </table>
+
+    <table>
+      <tr><td>バスやタクシーの運賃が割安になるというサービスもあります。</td></tr>
+    </table>
+      
+    <table>
+      <tr><td>この制度を実施している前橋市に在住の今野さん（男性、68歳）は、</td></tr>
+    </table>
+
+    <table>
+      <tr><td id='positive_1'>「Suicaとマイナンバーカードでデジタルフリーパスが使えるので便利だね。</td></tr>
+    </table>
+
+    <table>
+      <tr><td id='positive_2'>バスの運賃が安いし、年配の人でも外出しやすくて健康にも良いと思うよ。」</td></tr>
+    </table> 
+
+    <table>
+      <tr><td>ただ、このような制度は、あくまでも自治体がマイナンバーカード利用によって</td></tr>
+    </table>    
+        
+    <table>   
+      <tr><td>行政コストを減らすとか、マイナンバーカードとタイアップすることでサービス</td></tr>
+    </table>
+
+    <table>   
+      <tr><td>利用者の利便を図るもので、マイナンバーカード自体の機能ではありません。</td></tr>
+    </table>
+    
+
+  </div>
+  </article>
+
+  <article>
+    <p class="container_2">
+      というわけで、<br>「マイナンバーはタクシーが安くなる」は
+    <a class="fadein_2">　不正解　</a>です。
+    </p>
+  </article>
+  
+  
+
+  <br><br>
+  <p id='output_1'></p>
+  <br>
+  <p id='output_2'></p>
+  <br>
+  <!--
+  <p id='output_3'></p>
+  <br>
+  <p id='output_4'></p>
+  <br>
+  -->  
+
+ 
+    <div id="return_button">
+      <a class="return" href="/bingo_game">ビンゴ画面に戻る</a>
+    </div>
+
+
+    <script>
+      
+      var storage=localStorage;
+      
+      var d=new Date();
+      Month=d.getMonth()+1; //getMonth()1月は0になる。
+      time=d.getFullYear()+'/'+Month+'/'+d.getDate()+'/'+d.getHours()+'/'+d.getMinutes()+'/'+d.getSeconds()+'/'+d.getMilliseconds();
+
+      var move=''; //'positive' data
+      //var move_2=''; //'negative' data
+      //var move_3=''; //'close' data
+      var target_page_1_12=''; //whole data of this page
+      var tg_1_12=storage.getItem('tg_1_12'); //a counter added to the key name//
+
+
+
+      document.addEventListener('DOMContentLoaded', function(){
+      
+  
+        //mouseenter
+        document.getElementById('positive_1').addEventListener('mouseenter', function () {
+          
+          move=move+'positive'+',';
+  
+          //document.getElementById('output_1').textContent =move; 
+      
+        }, false);
+
+        document.getElementById('positive_2').addEventListener('mouseenter', function () {
+          
+          move=move+'positive'+',';
+  
+          //document.getElementById('output_1').textContent =move; 
+      
+        }, false);
+
+
+        document.getElementById('return_button').addEventListener('click', function () {
+
+          ID=storage.getItem('ID');
+          target_page_1_12=ID+','+'target_page_1_12'+','+time+','+move;
+
+          //document.getElementById('output_2').textContent =target_page_1_12; 
+
+          tg_1_12=storage.getItem('tg_1_12'); //get a counter//
+          tg_1_12=tg_1_12+1; //increment a counter//
+          key='target_page_1_12'+'_'+tg_1_12; //set a new key name//
+          storage.setItem(key, target_page_1_12); //store the value of target_page with a new key name//
+          storage.setItem('tg_1_12', tg_1_12); // store a new key name//
+
+        }, false);
+
+        
+      }, false);
+
+
+    </script>
+
+
+  </body>
+
+
+  </html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1 class="main_title">１．開始</h1>
+
+    <p class="container_1">
+      マイナンバーについて勉強しましょう。<br>
+      これから、皆さんにマイナンバーについていろいろ答えていただくことになります。<br>
+      回答は数字で答えていただきます。<br>
+      時間の制限はありませんので、ご自分のペースで回答して下さい。<br>
+      さあ始めましょう。<br>
+    </p>
+ 
+    <br>
+    <p class="container_3">
+      ＊この研究は、秋田県立大学研究倫理審査細則則第5条第2項に基づき、2021年7月26日付で倫理審査を通過しております。<br>
+      ＊収集した個人情報は個人情報保護法により保護されます。<br>
+    </p>
+    <br>
+
+
+    <div id="start_button">
+    <a class="start" href='start_2' id='start_2'>２．回答のやり方へ</a>
+    </div>
+   
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function(){
+    
+        document.getElementById('start_2').addEventListener('click', function () {
+        
+          var storage=localStorage;
+
+          storage.clear();
+        
+    
+       }, false);
+      
+       
+      }, false);
+    
+    </script>
+    
+
+      
+  </body>
+      
+</html>   

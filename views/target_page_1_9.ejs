@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+       <!--出典：PayPay    https://paypay.ne.jp/store-media/knowledge/maina-merit/-->
+  </head>
+  <body>
+    <h1 class="page_header_1"><span>９</span>マイナンバーは自治体のサービスを一元化</h1>
+
+  <article>
+    <div class="container_1">
+
+    <table>
+      <tr><td>マイナンバーは国や市区町村が提供するサービスを一元化できるという利点があります。</td></tr>
+    </table>
+
+    <table>
+      <tr><td>例えば、公的な身分証明書、各種証明書の発行・年金の裁定請求・税の申告・医療費控 </td></tr>
+    </table>
+
+    <table>
+      <tr><td>除申請・子供の予防接種のお知らせなど、国と市区町村が担当する書類の交付をマイナ</td></tr>
+    </table>
+    
+    <table>
+      <tr><td>ンバーカード1枚ですませられる点が便利です。</td></tr>
+    </table>
+   
+
+    <table>
+      <tr><td>マイナンバーは高齢者にも優しい制度ですよ。</td></tr>
+    </table>
+
+    <table>
+      <tr><td>吉田さん（男性、75歳、大分市在住）の声を聞いてみましょう。</td></tr>
+    </table>
+
+    <table>
+      <tr><td>「先日、年金のことで近所の年金事務所に行ったんだ。担当の人にいろいろ聞いたけど、</td></tr>
+    </table>
+
+    <table>
+      <tr><td id='positive_1'>年金事務所に来なくても、マイナンバーカードでできることが沢山あるんだって。便利だよね。</td></tr>
+    </table>
+
+    <table>
+      <tr><td>ただ、マイナポータルとかいうのを使わないといけないらしいね。</td><td id='negative_1'>ちょっと不安だけど。</td></tr>
+    </table>
+
+    <table>
+      <tr><td id='positive_2'>でも、いいこと聞いちゃったのでニコニコしてたら、孫も『おじいちゃん、なにかいいことあったの？』だって。」</td></tr>
+    </table> 
+
+    <table>
+      <tr><td>マイナンバーで行政間の連携を図り、所得や年金の受給状況などをきちんと把握し、</td></tr>
+    </table>
+
+    <table>
+      <tr><td>本当に困っている方に、必要な給付、適切な支援、迅速な対応を行います。</td></tr>
+    </table>
+  
+  
+
+  </div>
+  </article>
+
+  <article>
+    <p class="container_2">
+      というわけで、<br>「マイナンバーは自治体のサービスを一元化」は
+    <a class="fadein_1">　正解　</a>です。
+    </p>
+  </article>
+   
+  <br><br>
+  <p id='output_1'></p>
+  <br>
+  <p id='output_2'></p>
+  <br><br>
+  <!--
+  <p id='output_3'></p>
+  <br>
+  <p id='output_4'></p>
+  <br>
+  -->
+
+
+    <div id="return_button">
+      <a class="return" href="/bingo_game">ビンゴ画面に戻る</a>
+    </div>
+
+
+
+    <script>
+     
+     
+     var storage=localStorage;
+      
+      var d=new Date();
+      Month=d.getMonth()+1; //getMonth()1月は0になる。
+      time=d.getFullYear()+'/'+Month+'/'+d.getDate()+'/'+d.getHours()+'/'+d.getMinutes()+'/'+d.getSeconds()+'/'+d.getMilliseconds();
+
+      var move=''; //'positive' data
+      //var move_2=''; //'negative' data
+      //var move_3=''; //'close' data
+      var target_page_1_9=''; //whole data of this page
+      var tg_1_9=storage.getItem('tg_1_9'); //a counter added to the key name//
+
+
+
+      document.addEventListener('DOMContentLoaded', function(){
+      
+  
+        //mouseenter
+        document.getElementById('positive_1').addEventListener('mouseenter', function () {
+          
+          move=move+'positive'+',';
+  
+          //document.getElementById('output_1').textContent =move; 
+      
+        }, false);
+
+        document.getElementById('positive_2').addEventListener('mouseenter', function () {
+          
+          move=move+'positive'+',';
+  
+          //document.getElementById('output_1').textContent =move; 
+      
+        }, false);
+
+
+        document.getElementById('negative_1').addEventListener('mouseenter', function () {
+          
+          move=move+'negative'+',';
+  
+          //document.getElementById('output_1').textContent =move; 
+      
+        }, false);
+
+        document.getElementById('return_button').addEventListener('click', function () {
+
+
+          ID=storage.getItem('ID');
+          target_page_1_9=ID+','+'target_page_1_9'+','+time+','+move;
+
+          //document.getElementById('output_2').textContent =target_page_1_9; 
+
+          tg_1_9=storage.getItem('tg_1_9'); //get a counter//
+          tg_1_9=tg_1_9+1; //increment a counter//
+          key='target_page_1_9'+'_'+tg_1_9; //set a new key name//
+          storage.setItem(key, target_page_1_9); //store the value of target_page with a new key name//
+          storage.setItem('tg_1_9', tg_1_9); // store a new key name//
+
+        }, false);
+        
+
+      }, false);
+
+
+    </script>
+
+
+
+  </body>
+
+  </html>

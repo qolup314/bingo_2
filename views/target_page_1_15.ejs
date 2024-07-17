@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    　<!--　出典：ぴったりサービス　　https://app.oss.myna.go.jp/Application/resources/about/index.html-->
+  </head>
+  <body>
+    <h1 class="page_header_1"><span>15</span>マイナンバーは子育てサービスに便利</h1>
+
+  <article>
+    <div class="container_1">
+
+      <table>
+        <tr><td></td></tr>
+      </table>
+
+ 
+      <table>
+        <tr><td>マイナンバーをつかえば、色々な子育て支援サービスをネットで申請することができ</td></tr>
+      </table>
+
+      <table>
+        <tr><td>ます。例えば、保育所の入所申請、児童手当の手続きなどをオンライン申請できます。</td></tr>
+      </table>
+　 
+      <table>
+        <tr><td>また、保育所の入所申請もマイナンバーカードを使ってオンラインでできます。</td></tr>
+      </table>
+
+      <table>
+        <tr><td>その他にも、妊娠の届出、児童扶養手当などの現況届もできます。</td></tr>
+      </table>
+
+      <table>
+        <tr><td id='positive_1'>まさに、子育てママ・パパのための便利なツール！！</td></tr>
+      </table>
+      
+      <table>
+        <tr><td>孫の顔を見に娘の家に行った安藤さん（女性、68歳、宮城県在住）も、</td></tr>
+      </table>
+
+      <table>
+        <tr><td id='positive_2'>「この間娘の家に行ったときびっくりしたわよ。</td></tr>
+      </table>
+
+
+      <table>
+        <tr><td>そろそろ保育所の入所をしたいというので、娘がパソコンで何かやっていたの。</td></tr>
+      </table>
+
+      <table>
+        <tr><td>何それ？って聞いたら、マイナンバーカードがあると家から入所の手続きができる</td></tr>
+      </table>
+
+      <table>
+        <tr><td>と言うの。</td><td id='positive_3'>びっくりしたわよ。長生きはするものね。」と感嘆していました。</td></tr>
+      </table>
+
+
+    </div>
+  </article>
+
+  <article>
+    <p class="container_2">
+      というわけで、<br>「マイナンバーは子育てサービスに便利」は
+    <a class="fadein_1">　正解　</a>です。
+    </p>
+  </article>
+   
+  
+
+  <br><br>
+  <p id='output_1'></p>
+  <br>
+  <p id='output_2'></p>
+  <br><br>
+  
+  
+
+
+    <div id="return_button">
+      <a class="return" href="/bingo_game">ビンゴ画面に戻る</a>
+    </div>
+
+
+    <script>
+      
+      var storage=localStorage;
+      
+      var d=new Date();
+      Month=d.getMonth()+1; //getMonth()1月は0になる。
+      time=d.getFullYear()+'/'+Month+'/'+d.getDate()+'/'+d.getHours()+'/'+d.getMinutes()+'/'+d.getSeconds()+'/'+d.getMilliseconds();
+
+      var move=''; //'positive' data
+      //var move_2=''; //'negative' data
+      //var move_3=''; //'close' data
+      var target_page_1_15=''; //whole data of this page
+      var tg_1_15=storage.getItem('tg_1_15'); //a counter added to the key name//
+
+
+
+      document.addEventListener('DOMContentLoaded', function(){
+      
+  
+        //mouseenter
+        document.getElementById('positive_1').addEventListener('mouseenter', function () {
+          
+          move=move+'positive'+',';
+  
+          //document.getElementById('output_1').textContent =move; 
+      
+        }, false);
+
+        document.getElementById('positive_2').addEventListener('mouseenter', function () {
+          
+          move=move+'positive'+',';
+  
+          //document.getElementById('output_1').textContent =move; 
+      
+        }, false);
+
+
+        document.getElementById('positive_3').addEventListener('mouseenter', function () {
+          
+          move=move+'positive'+',';
+  
+          //document.getElementById('output_1').textContent =move; 
+      
+        }, false);
+
+
+        document.getElementById('return_button').addEventListener('click', function () {
+
+
+          ID=storage.getItem('ID');
+          target_page_1_15=ID+','+'target_page_1_15'+','+time+','+move;
+
+          //document.getElementById('output_2').textContent =target_page_1_15; 
+
+          tg_1_15=storage.getItem('tg_1_15'); //get a counter//
+          tg_1_15=tg_1_15+1; //increment a counter//
+          key='target_page_1_15'+'_'+tg_1_15; //set a new key name//
+          storage.setItem(key, target_page_1_15); //store the value of target_page with a new key name//
+          storage.setItem('tg_1_15', tg_1_15); // store a new key name//
+
+
+
+        }, false); 
+
+
+
+
+ 
+      }, false);
+
+
+    </script>
+
+
+
+
+
+  </body>
+  </html>

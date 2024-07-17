@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+       <!--出典：PayPay    https://paypay.ne.jp/store-media/knowledge/maina-merit/-->
+  </head>
+  <body>
+    <h1 class="page_header_1"><span>10</span>マイナンバーは青色申請の際、節税につながる</h1>
+
+  <article>
+    <div class="container_1">
+
+  
+    <table>
+      <tr><td>マイナンバーは、青色申告の際に節税につながることがあります。</td></tr>
+    </table>
+
+
+    <table>
+      <tr><td>例えば、窓口や郵送で確定申告をする場合、青色申告特別控除の上限が55万円となり</td></tr>
+    </table>
+
+
+    <table>
+      <tr><td>ます。でも、e-Taxによる電子申告をした場合、青色申告特別控除で65万円受けるこ</td></tr>
+    </table>
+
+    <table>
+      <tr><td>とができます。この制度は令和2年の確定申告から始まりましたが、山口さん（男性、</td></tr>
+    </table>
+
+    <table>
+      <tr><td>50歳、札幌市在住）もこの前の確定申告で初めてe-Taxを利用しました。</td></tr>
+    </table>
+
+
+    <table>
+      <tr><td>「ちっちゃな工場を経営しているんだけど、毎年確定申告の時期になると、</td></tr>
+    </table>
+
+    <table>
+      <tr><td id='negative_1'>また面倒な作業をやらなければいけないと思うと気が重くなるね。</td></tr>
+    </table>
+
+    <table>
+      <tr><td>でも、この前は試しにe-Taxというのを使ってみたんだ。</td></tr>
+    </table>
+
+
+    <table>
+      <tr><td id='positive_1'>そしたら割と簡単に進んじゃって、おまけに控除額も増えちゃって、いいことずくめ。</td></tr>
+    </table>
+
+    <table>
+      <tr><td id='positive_2'>うちのかみさんもニコニコしちゃって。」</td></tr>
+    </table>
+
+
+        
+  </div>
+  </article>
+
+  <article>
+    <p class="container_2">
+      というわけで、<br>「マイナンバーは青色申請の際、節税につながる」は
+    <a class="fadein_1">　正解　</a>です。
+    </p>
+  </article>
+   
+
+  <br><br>
+  <p id='output_1'></p>
+  <br>
+  <p id='output_2'></p>
+  <br><br>
+  <!--
+  <p id='output_3'></p>
+  <br>
+  <p id='output_4'></p>
+  <br>
+  --> 
+
+ 
+    <div id="return_button">
+      <a class="return" href="/bingo_game">ビンゴ画面に戻る</a>
+    </div>
+
+    <script>
+      
+      var storage=localStorage;
+      
+      var d=new Date();
+      Month=d.getMonth()+1; //getMonth()1月は0になる。
+      time=d.getFullYear()+'/'+Month+'/'+d.getDate()+'/'+d.getHours()+'/'+d.getMinutes()+'/'+d.getSeconds()+'/'+d.getMilliseconds();
+
+      var move=''; //'positive' data
+      //var move_2=''; //'negative' data
+      //var move_3=''; //'close' data
+      var target_page_1_10=''; //whole data of this page
+      var tg_1_10=storage.getItem('tg_1_10'); //a counter added to the key name//
+      
+
+
+      document.addEventListener('DOMContentLoaded', function(){
+      
+  
+        //mouseenter
+        document.getElementById('positive_1').addEventListener('mouseenter', function () {
+          
+          move=move+'positive'+',';
+  
+          //document.getElementById('output_1').textContent =move; 
+      
+        }, false);
+
+        document.getElementById('positive_2').addEventListener('mouseenter', function () {
+          
+          move=move+'positive'+',';
+  
+          //document.getElementById('output_1').textContent =move; 
+      
+        }, false);
+
+
+        document.getElementById('negative_1').addEventListener('mouseenter', function () {
+          
+          move=move+'negative'+',';
+  
+          //document.getElementById('output_1').textContent =move; 
+      
+        }, false);
+
+
+        document.getElementById('return_button').addEventListener('click', function () {
+
+
+          ID=storage.getItem('ID');
+          target_page_1_10=ID+','+'target_page_1_10'+','+time+','+move;
+
+          //document.getElementById('output_2').textContent =target_page_1_10; 
+
+          tg_1_10=storage.getItem('tg_1_10'); //get a counter//
+          tg_1_10=tg_1_10+1; //increment a counter//
+          key='target_page_1_10'+'_'+tg_1_10; //set a new key name//
+          storage.setItem(key, target_page_1_10); //store the value of target_page with a new key name//
+          storage.setItem('tg_1_10', tg_1_10); // store a new key name//
+
+          }, false);
+
+
+      }, false);
+
+
+    </script>
+
+
+
+  </body>
+
+  </html>

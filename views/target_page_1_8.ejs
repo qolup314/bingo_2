@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+       <!--出典：マイナンバー総合サイト　　https://www.kojinbango-card.go.jp/-->
+  </head>
+  <body>
+    <h1 class="page_header_1"><span>８</span>コンビニで公的証明書が取得できる</h1>
+
+  <article>
+    <div class="container_1">
+
+      <table>
+        <tr><td>マイナンバーはコンビニなどで各種公的証明書が取得可能です。</td></tr>
+      </table>
+
+      <table>
+        <tr><td>住民票の写し・印鑑登録証明書・各種税証明書・戸籍証明書などが取得できます。</td></tr> 
+      </table>
+    
+      <table>
+        <tr><td>コンビニの店舗に設置されているキオスク端末を使えば、</td></tr> 
+      </table>
+
+      <table>
+        <tr><td id='positive_1'>簡単に各種証明書が取得できます。</td></tr> 
+      </table>
+
+      <table>
+        <tr><td>高橋さん（女性、30歳、秋田市在住）は、</td></tr> 
+      </table>
+
+      <table>
+        <tr><td>「勤務先から所得証明者がいるというので、近所のコンビニでとったわ。</td></tr> 
+      </table>
+    
+      <table>
+        <tr><td id='positive_2'>市役所まで行かなくてもいいのもありがたいけど、夜でも利用できるのが助かりました。</td></tr> 
+      </table>
+
+      <table>
+        <tr><td>小さな子供がいてなかなか自由な時間がないのよ。</td><td id='positive_3'>助かったわ。」と、喜んでいました。</td></tr> 
+      </table>
+    
+
+    </div>
+  </article>
+
+  <article>
+    <p class="container_2">
+      というわけで、<br>「コンビニで公的証明書が取得できる」は
+    <a class="fadein_1">　正解　</a>です。
+    </p>
+  </article>
+   
+  <br><br>
+  <p id='output_1'></p>
+  <br>
+  <p id='output_2'></p>
+  <br><br>
+  <!--
+  <p id='output_3'></p>
+  <br>
+  <p id='output_4'></p>
+  <br>
+  -->
+
+    
+
+    <div id="return_button">
+      <a class="return" href="/bingo_game">ビンゴ画面に戻る</a>
+    </div>
+
+
+
+    <script>
+      
+      var storage=localStorage;
+      
+      var d=new Date();
+      Month=d.getMonth()+1; //getMonth()1月は0になる。
+      time=d.getFullYear()+'/'+Month+'/'+d.getDate()+'/'+d.getHours()+'/'+d.getMinutes()+'/'+d.getSeconds()+'/'+d.getMilliseconds();
+
+      var move=''; //'positive' data
+      //var move_2=''; //'negative' data
+      //var move_3=''; //'close' data
+      var target_page_1_8=''; //whole data of this page
+      var tg_1_8=storage.getItem('tg_1_8'); //a counter added to the key name//
+      
+
+
+      document.addEventListener('DOMContentLoaded', function(){
+      
+        
+        //mouseenter
+        document.getElementById('positive_1').addEventListener('mouseenter', function () {
+          
+          move=move+'positive'+',';
+  
+          //document.getElementById('output_1').textContent =move; 
+      
+        }, false);
+
+        document.getElementById('positive_2').addEventListener('mouseenter', function () {
+          
+          move=move+'positive'+',';
+  
+          //document.getElementById('output_1').textContent =move; 
+      
+        }, false);
+
+
+        document.getElementById('positive_3').addEventListener('mouseenter', function () {
+          
+          move=move+'positive'+',';
+  
+          //document.getElementById('output_1').textContent =move; 
+      
+        }, false);
+
+        document.getElementById('return_button').addEventListener('click', function () {
+
+
+          ID=storage.getItem('ID');
+          target_page_1_8=ID+','+'target_page_1_8'+','+time+','+move;
+
+          //document.getElementById('output_2').textContent =target_page_1_8; 
+
+          tg_1_8=storage.getItem('tg_1_8'); //get a counter//
+          tg_1_8=tg_1_8+1; //increment a counter//
+          key='target_page_1_8'+'_'+tg_1_8; //set a new key name//
+          storage.setItem(key, target_page_1_8); //store the value of target_page with a new key name//
+          storage.setItem('tg_1_8', tg_1_8); // store a new key name//
+
+        }, false);
+        
+
+ 
+      }, false);
+
+
+    </script>
+
+
+
+  </body>
+
+  </html>

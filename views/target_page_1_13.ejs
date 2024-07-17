@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    　<!--出典：PayPay　　https://paypay.ne.jp/store-media/knowledge/maina-merit/-->
+  </head>
+  <body>
+    <h1 class="page_header_1"><span>13</span>各種ポイントを「自治体ポイント」に交換できる</h1>
+
+  <article>
+    <div class="container_1">
+
+      <table>
+        <tr><td>マイナンバーは、クレジットカードや航空会社の利用でたまったマイレージなどを</td></tr>
+      </table>
+
+      <table>
+        <tr><td>一部の「自治体ポイント」に交換することができます。自治体ポイントに交換でき</td></tr>
+      </table>  
+
+      <table>
+        <tr><td>るのは、ニコスカード・三井住友カード・JCBカード・セゾンカード・ANA・JAL・</td></tr>
+      </table>
+
+      <table>
+        <tr><td>docomo・りそなカード・ローソンカードなどです。川崎市では平成29年から1年間</td></tr>
+      </table>
+
+      <table>
+        <tr><td>自治体ポイント制度の実証実験を行いました。その実験に参加した桜井さん（女性、</td></tr>
+      </table>
+
+      <table>
+        <tr><td>55歳）はあの時のことを思い出してこう言っています。</td></tr>
+      </table>
+
+      <table>
+        <tr><td>「マイナンバーカードを持っているだけで、自分が貯めたポイントやマイレージが</td></tr>
+      </table>  
+
+      <table>
+        <tr><td>商店街で使えるようになるというので参加したの。ポイントが大分たまっていたので、</td></tr>
+      </table>  
+
+
+      <table>
+        <tr><td>全部使えたらいいと思って参加の申請をしたのよ。</td></tr>
+      </table>
+
+      <table>
+        <tr><td id='positive_1'>自分のポイントを実証実験ポイントに交換すると地元の商店街で使えてとっても便利<br>だったわ。</td><tr>
+      </table>  
+
+      <table>
+        <tr><td id='negative_1'>最初、マイキーIDを作らなければいけないので何か面倒だったけど、</td><td id='positive_2'>後は簡単。</td></tr>
+      </table>      
+
+      <table>
+        <tr><td>やっぱり、マイナンバーカードって持っていた方がいいわね。」</td></tr>
+      </table>
+        
+ 
+
+    </div>
+  </article>
+
+  <article>
+    <p class="container_2">
+      というわけで、<br>「各種ポイントを『自治体ポイント』に交換できる」は<a class="fadein_1">　正解　</a>です。
+    </p>
+  </article>
+   
+  <br><br>
+  <p id='output_1'></p>
+  <br>
+  <p id='output_2'></p>
+  <br><br>
+  <!--
+  <p id='output_3'></p>
+  <br>
+  <p id='output_4'></p>
+  <br>
+  --> 
+
+    
+
+    <div id="return_button">
+      <a class="return" href="/bingo_game">ビンゴ画面に戻る</a>
+    </div>
+
+
+    <script>
+      
+      document.addEventListener('DOMContentLoaded', function(){
+      
+        var storage=localStorage;
+      
+        var d=new Date();
+        Month=d.getMonth()+1; //getMonth()1月は0になる。
+        time=d.getFullYear()+'/'+Month+'/'+d.getDate()+'/'+d.getHours()+'/'+d.getMinutes()+'/'+d.getSeconds()+'/'+d.getMilliseconds();
+
+        var move=''; //'positive' data
+        //var move_2=''; //'negative' data
+        //var move_3=''; //'close' data
+        var target_page_1_13=''; //whole data of this page
+        var tg_1_13=storage.getItem('tg_1_13'); //a counter added to the key name//
+
+  
+        //mouseenter
+        document.getElementById('positive_1').addEventListener('mouseenter', function () {
+          
+          move=move+'positive'+',';
+  
+          //document.getElementById('output_1').textContent =move; 
+      
+        }, false);
+
+        document.getElementById('positive_2').addEventListener('mouseenter', function () {
+          
+          move=move+'positive'+',';
+  
+          //document.getElementById('output_1').textContent =move; 
+      
+        }, false);
+
+        document.getElementById('negative_1').addEventListener('mouseenter', function () {
+          
+          move=move+'negative'+',';
+  
+          //document.getElementById('output_1').textContent =move; 
+      
+        }, false);
+
+
+        document.getElementById('return_button').addEventListener('click', function () {
+
+          ID=storage.getItem('ID');
+          target_page_1_13=ID+','+'target_page_1_13'+','+time+','+move;
+
+          //document.getElementById('output_2').textContent =target_page_1_13; 
+
+          tg_1_13=storage.getItem('tg_1_13'); //get a counter//
+          tg_1_13=tg_1_13+1; //increment a counter//
+          key='target_page_1_13'+'_'+tg_1_13; //set a new key name//
+          storage.setItem(key, target_page_1_13); //store the value of target_page with a new key name//
+          storage.setItem('tg_1_13', tg_1_13); // store a new key name//
+
+        }, false);
+
+
+        
+      }, false);
+
+
+    </script>
+
+
+  </body>
+
+  </html>

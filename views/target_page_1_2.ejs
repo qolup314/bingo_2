@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!--出典：総務省　https://www.soumu.go.jp/kojinbango_card/04.html"-->
+  </head>
+  <body>
+    <h1 class="page_header_1"><span>２</span>マイナンバーはコンビニで割引</h1>
+
+    <div class="container_1">
+    <table>
+      <tr><td id='positive_1'>コンビニでは各種公的証明書が取得可能ですが、</td><td id='negative_1'>マイナンバーカードによる買い物</td></tr>
+    </table>
+
+    <table>
+      <tr><td>での割引はありません。</td></tr>
+    </table>  
+      
+    <table>
+      <tr><td>秋田市の佐藤さん（男性会社員、30代）「よくコンビニを利用します。先日も住民</td></tr>
+    </table>  
+
+    <table>
+      <tr><td>票をコンビニ交付で受け取ってついでに買い物もしました。もしマイナンバーカー</td></tr>
+    </table>   
+
+    <table>
+      <tr><td>ドで割引サービスがあれば嬉しいですね。」</td></tr>
+    </table>   
+
+    
+    <table>
+      <tr><td>このような要望は多いので、将来は割引サービスも検討してほしいですね。</td></tr>
+    </table> 
+    </div>
+
+
+  
+
+  
+
+  <article>
+    <p class="container_2">
+      というわけで、<br>「マイナンバーはコンビニで割引」は <a class="fadein_2">　不正解　</a>です。
+    </p>
+  </article>
+
+    
+  <br><br>
+  <p id='output_1'></p>
+  <br>
+  <p id='output_2'></p>
+  <br>
+  <!--
+  <p id='output_3'></p>
+  <br>
+  <p id='output_4'></p>
+  <br>
+  -->
+
+
+    <div id="return_button">
+      <a class="return" href="/bingo_game">ビンゴ画面に戻る</a>
+    </div>
+
+
+  <script>
+      
+    document.addEventListener('DOMContentLoaded', function(){
+    
+      var storage=localStorage;
+      
+      var d=new Date();
+      Month=d.getMonth()+1; //getMonth()1月は0になる。
+      time=d.getFullYear()+'/'+Month+'/'+d.getDate()+'/'+d.getHours()+'/'+d.getMinutes()+'/'+d.getSeconds()+'/'+d.getMilliseconds();
+
+      var move='';
+      var target_page_1_2='';
+      var tg_1_2=storage.getItem('tg_1_2'); //a counter added to the key name//
+
+
+
+      //mouseenter
+      document.getElementById('positive_1').addEventListener('mouseenter', function () {
+        
+        move=move+'positive'+',';
+
+        //document.getElementById('output_1').textContent =move; 
+    
+      }, false);
+
+      document.getElementById('negative_1').addEventListener('mouseenter', function () {
+        
+        move=move+'negative'+',';
+
+        //document.getElementById('output_1').textContent =move; 
+    
+      }, false);
+
+      document.getElementById('return_button').addEventListener('click', function () {
+
+        ID=storage.getItem('ID');
+        target_page_1_2=ID+','+'target_page_1_2'+','+time+','+move;
+
+        //document.getElementById('output_2').textContent =target_page_1_2; 
+        
+        tg_1_2=storage.getItem('tg_1_2'); //get a counter//
+        tg_1_2=tg_1_2+1; //increment a counter//
+        key='target_page_1_2'+'_'+tg_1_2; //set a new key name//
+        storage.setItem(key, target_page_1_2); //store the value of target_page with a new key name//
+        storage.setItem('tg_1_2', tg_1_2); // store a new key name//
+        
+  
+
+      }, false);
+
+
+    }, false);
+
+
+    </script>
+
+
+  </body>
+  </html>

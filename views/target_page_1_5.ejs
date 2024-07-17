@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!--出典：https://media.xid.inc/my-number-card/children-my-number/-->
+  </head>
+  <body>
+    <h1 class="page_header_1"><span>５</span>行政手続でオンライン申請利用不可</h1>
+
+  <article>
+    <div class="container_1">
+    
+    
+      <table>
+        <tr><td>マイナンバーは各種行政手続のオンライン申請で利用することができます。</td></tr>
+      </table>
+
+      <table>
+        <tr><td>例えば、確定申告など窓口まで足を運ばなくてもオンラインでできるようになります。</td></tr>
+      </table>
+
+      <table>
+        <tr><td>足が不自由な山本さん（女性、56歳、鹿児島県在住）は、</td></tr>
+      </table> 
+      
+      <table>
+        <tr><td>「私は障がいを持っているので、いちいち役所に行かなくても、</td></tr>
+      </table> 
+      
+
+      <table>
+        <tr><td>パソコンさえあればマイナンバーカードを使って確定申告の申請が</td></tr>
+      </table> 
+
+          
+      <table>    
+        <tr><td id='positive_1'>できるのでとっても助かりました。これからいろいろなことで役に立つから、</td></tr>
+      </table>
+      
+      <table>
+        <tr><td>体が不自由な人にとってもマイナンバーカードは身に付けておいた方がいいですよ。」</td><tr>
+      </table>
+
+      <table>
+        <tr><td id='positive_2'>と喜んでいました。</td><tr>
+      </table>
+
+
+    </div>
+  </article>
+
+  <article>
+    <p class="container_2">
+      というわけで、<br>「行政手続でオンライン申請利用不可」は<a class="fadein_2">　不正解　</a>です。
+    </p>
+  </article>
+   
+    
+  <br><br>
+  <p id='output_1'></p>
+  <br>
+  <p id='output_2'></p>
+  <br><br>
+  <!--
+  <p id='output_3'></p>
+  <br>
+  <p id='output_4'></p>
+  <br>
+  -->
+
+
+    
+
+    <div id="return_button">
+      <a class="return" href="/bingo_game">ビンゴ画面に戻る</a>
+    </div>
+
+
+    <script>
+      
+      document.addEventListener('DOMContentLoaded', function(){
+      
+        var storage=localStorage;
+      
+        var d=new Date();
+        Month=d.getMonth()+1; //getMonth()1月は0になる。
+        time=d.getFullYear()+'/'+Month+'/'+d.getDate()+'/'+d.getHours()+'/'+d.getMinutes()+'/'+d.getSeconds()+'/'+d.getMilliseconds();
+
+
+        var move='';
+        var target_page_1_5='';
+        var tg_1_5=storage.getItem('tg_1_5'); //a counter added to the key name//
+  
+
+        //mouseenter
+        document.getElementById('positive_1').addEventListener('mouseenter', function () {
+          
+          move=move+'positive'+',';
+  
+          //document.getElementById('output_1').textContent =move; 
+      
+        }, false);
+
+        document.getElementById('positive_2').addEventListener('mouseenter', function () {
+          
+          move=move+'positive'+',';
+  
+          //document.getElementById('output_1').textContent =move; 
+      
+        }, false);
+
+        document.getElementById('return_button').addEventListener('click', function () {
+
+          ID=storage.getItem('ID');
+          target_page_1_5=ID+','+'target_page_1_5'+','+time+','+move;
+
+          //document.getElementById('output_2').textContent =target_page_1_5; 
+          
+          tg_1_5=storage.getItem('tg_1_5'); //get a counter//
+          tg_1_5=tg_1_5+1; //increment a counter//
+          key='target_page_1_5'+'_'+tg_1_5; //set a new key name//
+          storage.setItem(key, target_page_1_5); //store the value of target_page with a new key name//
+          storage.setItem('tg_1_5', tg_1_5); // store a new key name//
+
+          
+
+        }, false);
+
+  
+      }, false);
+
+
+    </script>
+
+
+  </body>
+  </html>

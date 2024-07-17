@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!--出典：https://mynumbercard.point.soumu.go.jp/service_search/-->
+  </head>
+  <body>
+    <h1 class="page_header_1"><span>14</span>マイナカードはクレジットカード</h1>
+
+  <article>
+    <div class="container_1">
+
+      <table>
+        <tr><td></td></tr>
+      </table>
+
+
+      <table>
+        <tr><td id='negative_1'>残念ながら、マイナンバーカードにクレジット機能はありません。</td></tr>
+      </table>
+
+      <table>
+        <tr><td>確かに、マイナンバーカードもクレジットカードとして使えたら便利ですよね。</td></tr>
+      </table>
+
+      <table>
+        <tr><td>「マイナンバーカードで支払いもできたら便利だよね。カードで支払いをすることって</td></tr>
+      </table>
+
+      <table>
+        <tr><td>多いから。」と、高井さん（男性、42歳、山口県在住）も言ってます。</td></tr>
+      </table>
+
+      <table>
+        <tr><td>今後に期待しましょう。</td></tr>
+      </table>
+
+
+
+
+    </div>
+  </article>
+
+  <article>
+    <p class="container_2">
+      というわけで、<br>「マイナカードはクレジットカード」は<a class="fadein_2">　不正解　</a>です。
+    </p>
+  </article>　
+   
+
+  <br><br>
+  <p id='output_1'></p>
+  <p id='output_2'></p>
+  <br><br>
+  
+
+
+    <div id="return_button">
+      <a class="return" href="/bingo_game">ビンゴ画面に戻る</a>
+    </div>
+
+
+
+    <script>
+      
+
+      var storage=localStorage;
+      
+      var d=new Date();
+      Month=d.getMonth()+1; //getMonth()1月は0になる。
+      time=d.getFullYear()+'/'+Month+'/'+d.getDate()+'/'+d.getHours()+'/'+d.getMinutes()+'/'+d.getSeconds()+'/'+d.getMilliseconds();
+
+      var move=''; //'positive' data
+      //var move_2=''; //'negative' data
+      //var move_3=''; //'close' data
+      var target_page_1_14=''; //whole data of this page
+      var tg_1_14=storage.getItem('tg_1_14'); //a counter added to the key name//
+      
+
+
+
+      document.addEventListener('DOMContentLoaded', function(){
+      
+        
+  
+        //mouseenter
+        document.getElementById('negative_1').addEventListener('mouseenter', function () {
+          
+          move=move+'negative'+',';
+  
+          //document.getElementById('output_1').textContent =move; 
+      
+        }, false);
+  
+
+        document.getElementById('return_button').addEventListener('click', function () {
+
+          ID=storage.getItem('ID');
+          target_page_1_14=ID+','+'target_page_1_14'+','+time+','+move;
+
+          //document.getElementById('output_2').textContent =target_page_1_14; 
+
+          tg_1_14=storage.getItem('tg_1_14'); //get a counter//
+          tg_1_14=tg_1_14+1; //increment a counter//
+          key='target_page_1_14'+'_'+tg_1_14; //set a new key name//
+          storage.setItem(key, target_page_1_14); //store the value of target_page with a new key name//
+          storage.setItem('tg_1_14', tg_1_14); // store a new key name//
+
+        }, false);
+
+
+
+
+
+
+      }, false);
+
+
+    </script>
+
+
+
+  </body>
+  </html>

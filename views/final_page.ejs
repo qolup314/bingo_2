@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+ 
+  
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+
+  <body>
+    <h1 class="main_title">９．データの送付準備のページ</h1>
+    
+    <p class="push">
+      データを送る準備をします。<br>
+      まず下の黄色のボタンを押し、データファイルをダウンロードして下さい。<br>
+      次にその下にある「１０. データの送付のページへ」のボタンを押して下さい。<br>
+    </p>
+    <br>
+    <div class="arrow">
+    </div>
+   
+    <form class="final">
+    <input type='button' style="width:380px;height:80px;  font-size:40px; background-color: rgb(230, 243, 114); font-weight: bold; "name='go' value='ダウンロードする' id='go'>
+    </p></form>
+  
+
+
+
+    <br>
+    <p id="output_1"></p>
+    <br>
+
+ 
+    <div id="start_00_button">
+    <a class="start_00" href='end'>10．データの送付のページへ</a>
+    </div>
+
+
+    <script>
+
+    document.addEventListener('DOMContentLoaded', function(){
+
+        document.getElementById('go').addEventListener('click', function () {
+
+            var storage=localStorage;
+
+            /*
+            var basic_info=storage.getItem('basic_info');
+
+            var future_time_1=storage.getItem('future_time_1');
+
+            var IT_literacy=storage.getItem('IT_literacy');
+
+            var my_number_1=storage.getItem('my_number_1');
+
+            var target_page_1_1=storage.getItem('target_page_1_1');
+
+            var target_page_1_2=storage.getItem('target_page_1_2');
+
+            var target_page_1_3=storage.getItem('target_page_1_3');
+
+            var target_page_1_4=storage.getItem('target_page_1_4');
+
+            var target_page_1_5=storage.getItem('target_page_1_5');
+            */
+
+
+
+            //data=basic_info+','+future_time_1+','+IT_literacy+','+my_number_1+','+target_page_1_1+target_page_1_2+target_page_1_3+target_page_1_4+target_page_1_5;
+
+
+            var data=''; 
+
+            for(var i=0, len=storage.length; i<len; i++){
+
+              var k=storage.key(i);
+
+              var v=storage[k];
+
+              data=data+k+','+v+',';
+
+            }
+
+            //document.getElementById('output_1').textContent=data;
+
+
+            var blob = new Blob([data], {type: "text/plain"}); // バイナリデータを作ります。
+
+            //document.getElementById('output_1').textContent=blob.size;
+
+
+            // IEか他ブラウザかの判定
+            if(window.navigator.msSaveBlob)
+             {
+            // IEなら独自関数を使います。
+             window.navigator.msSaveBlob(blob, "test_0.txt");
+            } else {
+            // それ以外はaタグを利用してイベントを発火させます
+            var a = document.createElement("a");
+            a.href = URL.createObjectURL(blob);
+            a.target = '_blank';
+            a.download = 'data.txt';
+            a.click();
+            }
+
+
+        }, false);
+
+    }, false);
+
+    </script>
+
+
+
+
+
+  </body>
+
+</html>

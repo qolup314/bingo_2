@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!--　出典：「マイナンバーカード」の取得促進および災害時の対応機能強化に関する要請について　　https://www.jcci.or.jp/kikaku/2018.my.numberyouseisho.pdf-->
+  </head>
+  <body>
+    <h1 class="page_header_1"><span>23</span>マイナンバーは災害対策に関する手続きがスムーズになる</h1>
+
+  <article>
+    <div class="container_1">
+
+      <table>
+        <tr><td>マイナンバーで災害対策に関する事務手続がスムーズになります。</td></tr>
+      </table>
+
+      <table>
+        <tr><td>例えば、災害発生時、都道府県知事による指示で救助業務に従事した医療・土木建設</td></tr>
+        <tr><td>工事・輸送関係者等にそのかかった費用が支給されますが、その支給がスムーズに</td></tr>
+      </table>
+        
+      <table>
+        <tr><td>なります。また、地域住民が救助業務に従事し、負傷・病気・死亡した場合には扶助</td></tr>
+        <tr><td>金が支給されるとき、申請時の各種証明書の提出が不要になります。</td></tr>
+      </table>  
+
+      <table>
+        <tr><td>さらに、被災者生活再建支援金を申請する際には、罹災証明書の他各種証明書が必要</td></tr>
+        <tr><td>ですが、申請者の手間を減らし手続きを迅速に行うことができます。</td></tr>
+      </table>
+
+
+      <table>
+        <tr><td>これらは各自治体によって対応がことなるようですが、</td></tr>
+        <tr><td>マイナンバーカードがあることにより手続きの簡易化に向かって行くことは確かです。</td></tr>
+      </table>
+
+      <table>
+        <tr><td>昨年友人が被災した松本さん（女性、47歳、小樽市在住）によれば、</td></tr>
+        <tr><td>「大学時代の友達が九州に住んでいるんだけど、洪水にあっちゃって、</td></tr>
+        <tr><td id='negative_1'>本当にあのときは大変だったそうよ。</td></tr>
+      </table>
+
+      <table>
+        <tr><td>だけど、後から聞いたんだけど、</td></tr>
+        <tr><td>被災した人たちの中でもマイナンバーカードをとっていた人はよかったみたい。</td></tr>
+        <tr><td id='positive_1'>あれがあったおかげで、色々な役所の手続きもずいぶん簡単にできたと言ってたわ。</td></tr>
+        <tr><td id='positive_2'>困った時にこそ、ありがたみがわかるのよね。」</td></tr>
+      </table>
+
+
+
+      
+    </div>
+  </article>
+
+  <article>
+    <p class="container_2">
+      というわけで、<br>「マイナンバーは災害対策に関する手続きがスムーズになる」は<a class="fadein_1">　正解　</a>です。
+    </p>
+  </article>　
+   
+  
+  <br><br>
+  <p id='output_1'></p>
+  <br>
+  <p id='output_2'></p>
+  <br><br>
+
+
+    
+    <div id="return_button">
+      <a class="return" href="/bingo_game">ビンゴ画面に戻る</a>
+    </div>
+
+
+    <script>
+  
+  
+      var storage=localStorage;
+      
+      var d=new Date();
+      Month=d.getMonth()+1; //getMonth()1月は0になる。
+      time=d.getFullYear()+'/'+Month+'/'+d.getDate()+'/'+d.getHours()+'/'+d.getMinutes()+'/'+d.getSeconds()+'/'+d.getMilliseconds();
+
+      var move=''; //'positive' data
+      //var move_2=''; //'negative' data
+      //var move_3=''; //'close' data
+      var target_page_1_23=''; //whole data of this page
+      var tg_1_23=storage.getItem('tg_1_23'); //a counter added to the key name//
+
+
+      document.addEventListener('DOMContentLoaded', function(){
+      
+  
+        //mouseenter
+        document.getElementById('positive_1').addEventListener('mouseenter', function () {
+          
+          move=move+'positive'+',';
+  
+          //document.getElementById('output_1').textContent =move; 
+      
+        }, false);
+
+        document.getElementById('positive_2').addEventListener('mouseenter', function () {
+          
+          move=move+'positive'+',';
+  
+          //document.getElementById('output_1').textContent =move; 
+      
+        }, false);
+
+
+        document.getElementById('negative_1').addEventListener('mouseenter', function () {
+          
+          move=move+'negative'+',';
+  
+          //document.getElementById('output_1').textContent =move; 
+      
+        }, false);
+
+
+        document.getElementById('return_button').addEventListener('click', function () {
+
+
+          ID=storage.getItem('ID');
+          target_page_1_23=ID+','+'target_page_1_23'+','+time+','+move;
+
+          //document.getElementById('output_2').textContent =target_page_1_23; 
+
+          tg_1_23=storage.getItem('tg_1_23'); //get a counter//
+          tg_1_23=tg_1_23+1; //increment a counter//
+          key='target_page_1_23'+'_'+tg_1_23; //set a new key name//
+          storage.setItem(key, target_page_1_23); //store the value of target_page with a new key name//
+          storage.setItem('tg_1_23', tg_1_23); // store a new key name//
+
+
+        }, false);
+      
+ 
+      }, false);
+
+
+    </script>
+
+
+
+  </body>
+  </html>
