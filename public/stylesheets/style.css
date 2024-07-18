@@ -294,7 +294,7 @@ input[type="file"]{
 .fadein_1 {
   animation-name:fadeinanime;
   animation-duration:20s;
-  animation-delay:5s;
+  animation-delay:2s;
   animation-fill-mode:forwards;
   opacity: 0;
   font-size:50px;
@@ -316,7 +316,7 @@ input[type="file"]{
 .fadein_2 {
   animation-name:fadeinanime;
   animation-duration:20s;
-  animation-delay:5s;
+  animation-delay:2s;
   animation-fill-mode:forwards;
   opacity: 0;
   font-size:50px;
