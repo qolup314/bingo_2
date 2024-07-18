@@ -10,19 +10,9 @@ const upload=multer({ dest: 'uploads/'});
 
 
 var main = require('./routes/main');
-var start_1=require('./routes/start_1');
-var start_2=require('./routes/start_2');
-var basic_info=require('./routes/basic_info');
-var future_time_1=require('./routes/future_time_1');
-//var future_time_2=require('./routes/future_time_2');
-var IT_literacy=require('./routes/IT_literacy');
-var my_number_1=require('./routes/my_number_1');
 var bingo=require('./routes/bingo');
-var my_number_2=require('./routes/my_number_2');
 var final_page=require('./routes/final_page')
 var end=require('./routes/end')
-
-
 var bingo_game=require('./routes/bingo_game');
 var target_page_1_1=require('./routes/target_page_1_1');
 var target_page_1_2=require('./routes/target_page_1_2');
@@ -72,18 +62,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/', main);
-app.use('/start_1', start_1);
-app.use('/start_2', start_2);
-app.use('/basic_info', basic_info);
-app.use('/future_time_1', future_time_1);
-//app.use('/future_time_2', future_time_2);
-app.use('/IT_literacy', IT_literacy);
-app.use('/my_number_1', my_number_1);
 app.use('/bingo', bingo);
-app.use('/my_number_2', my_number_2);
 app.use('/final_page', final_page)
 app.use('/end', end)
-
 app.use('/bingo_game', bingo_game);
 app.use('/target_page_1_1', target_page_1_1);
 app.use('/target_page_1_2', target_page_1_2);
